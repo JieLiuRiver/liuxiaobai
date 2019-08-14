@@ -14,7 +14,7 @@
         <link href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/08/14/Object.assign.html">
         </link>
         <updated>2019-08-14T06:00:00Z</updated>
-        <summary type="html"><![CDATA[<h2><a class="anchor" aria-hidden="true" id="objectassign"></a><a href="#objectassign" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>Object.assign</h2> <h3><a class="anchor" aria-hidden="true" id="用法"></a><a href="#用法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>用法</h3> <p>用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象</p> <pre><code class="hljs"><span class="hljs-string">const</span> <span class="hljs-string">target</span> <span class="hljs-string">=</span> <span class="hljs-string">{</span> <span class="hljs-attr">a:</span> <span class="hljs-number">1</span><span class="hljs-string">,</span> <span class="hljs-attr">b:</span> <span class="hljs-number">2</span> <span class="hljs-string">};</span> <span class="hljs-string">const</span> <span class="hljs-string">source</span> <span class="hljs-string">=</span> <span class="hljs-string">{</span> <span class="hljs-attr">b:</span> <span class="hljs-number">4</span><span class="hljs-string">,</span> <span class="hljs-attr">c:</span> <span class="hljs-number">5</span> <span class="hljs-string">};</span> <span class="hljs-string">const</span> <span class="hljs-string">returnedTarget</span> <span class="hljs-string">=</span> <span class="hljs-string">Object.assign(target,</span> <span class="hljs-string">source);</span> <span class="hljs-string">console.log(target);</span> <span class="hljs-string">//</span> <span class="hljs-string">expected</span> <span class="hljs-attr">output:</span> <span class="hljs-string">Object</span> <span class="hljs-string">{</span> <span class="hljs-attr">a:</span> <span class="hljs-number">1</span><span class="hljs-string">,</span> <span class="hljs-attr">b:</span> <span class="hljs-number">4</span><span class="hljs-string">,</span> <span class="hljs-attr">c:</span> <span class="hljs-number">5</span> <span class="hljs-string">}</span> <span class="hljs-string">console.lo...</span></code></pre>]]></summary>
+        <summary type="html"><![CDATA[<h2><a class="anchor" aria-hidden="true" id="objectassign"></a><a href="#objectassign" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>Object.assign</h2> <h3><a class="anchor" aria-hidden="true" id="用法"></a><a href="#用法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>用法</h3> <p>用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象</p> <pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> target = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">2</span> }; <span class="hljs-keyword">const</span> source = { <span class="hljs-attr">b</span>: <span class="hljs-number">4</span>, <span class="hljs-attr">c</span>: <span class="hljs-number">5</span> }; <span class="hljs-keyword">const</span> returnedTarget = <span class="hljs-built_in">Object</span>.assign(target, source); <span class="hljs-built_in">console</span>.log(target); <span class="hljs-comment">// expected output: Object { a: 1, b: 4, c: 5 }</span> <span class="hljs-built_in">console</span>.lo...</code></pre>]]></summary>
         <author>
             <name>柳小白</name>
         </author>
@@ -86,7 +86,7 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[格式化日期（看开源项目学一招半式）]]></title>
+        <title type="html"><![CDATA[格式化日期]]></title>
         <id>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/07/06/格式化日期.html</id>
         <link href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/07/06/格式化日期.html">
         </link>
@@ -119,7 +119,7 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[内联样式转对象（看开源项目学一招半式）]]></title>
+        <title type="html"><![CDATA[内联样式转对象]]></title>
         <id>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/07/06/parseStyle.html</id>
         <link href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/07/06/parseStyle.html">
         </link>
@@ -130,7 +130,7 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[中横线转驼峰变量（看开源项目学一招半式）]]></title>
+        <title type="html"><![CDATA[中横线转驼峰变量]]></title>
         <id>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/07/05/驼峰.html</id>
         <link href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/07/05/驼峰.html">
         </link>
