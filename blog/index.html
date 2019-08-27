@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Blog · 柳小白</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Be Water, My Friend!"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Blog · 柳小白"/><meta property="og:type" content="website"/><meta property="og:url" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/"/><meta property="og:description" content="Be Water, My Friend!"/><meta property="og:image" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/img/1.jpeg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/img/1.jpeg"/><link rel="shortcut icon" href="/liuxiaobai/"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css"/><link rel="alternate" type="application/atom+xml" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/atom.xml" title="柳小白 Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/feed.xml" title="柳小白 Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/liuxiaobai/js/scrollSpy.js"></script><link rel="stylesheet" href="/liuxiaobai/css/main.css"/><script src="/liuxiaobai/js/codetabs.js"></script></head><body class="blog"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/liuxiaobai/"><h2 class="headerTitle">柳小白</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive siteNavItemActive"><a href="/liuxiaobai/blog/" target="_self">Blog</a></li><li class=""><a href="https://github.com/stupidWall/liuxiaobai" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>All Blog Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">All Blog Posts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/14/Object.assign">模拟实现Object.assign</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/14/TypeScript">TypeScript</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/12/utils">收集开源项目好用工具函数</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/12/TaroUi">taro-ui</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/11/events">读Taro消息机制源码笔记</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/10/面试题">火爆了的前端面试题</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/泛型">泛型（TypeScript学习笔记）</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/格式化日期">格式化日期</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/枚举">枚举（TypeScript学习笔记）</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/react生命周期">React生命周期</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/parseStyle">内联样式转对象</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/05/驼峰">中横线转驼峰变量</a></li></ul></div></div></section></div><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Blog · 柳小白</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Be Water, My Friend!"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Blog · 柳小白"/><meta property="og:type" content="website"/><meta property="og:url" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/"/><meta property="og:description" content="Be Water, My Friend!"/><meta property="og:image" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/img/1.jpeg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/img/1.jpeg"/><link rel="shortcut icon" href="/liuxiaobai/"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css"/><link rel="alternate" type="application/atom+xml" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/atom.xml" title="柳小白 Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/feed.xml" title="柳小白 Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/liuxiaobai/js/scrollSpy.js"></script><link rel="stylesheet" href="/liuxiaobai/css/main.css"/><script src="/liuxiaobai/js/codetabs.js"></script></head><body class="blog"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/liuxiaobai/"><h2 class="headerTitle">柳小白</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive siteNavItemActive"><a href="/liuxiaobai/blog/" target="_self">Blog</a></li><li class=""><a href="https://github.com/stupidWall/liuxiaobai" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>All Blog Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">All Blog Posts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2020/08/21/vue">iview</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2020/08/15/对象转内联样式">对象转内联样式</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/27/jsonp">实现一个JSONP</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/实现一个Promise">实现一个Promise</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/14/Object.assign">模拟实现Object.assign</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/14/TypeScript">TypeScript</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/12/utils">收集开源项目好用工具函数</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/12/TaroUi">taro-ui</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/11/events">读Taro消息机制源码笔记</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/10/面试题">火爆了的前端面试题</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/泛型">泛型（TypeScript学习笔记）</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/格式化日期">格式化日期</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/枚举">枚举（TypeScript学习笔记）</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/react生命周期">React生命周期</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/parseStyle">内联样式转对象</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/05/驼峰">中横线转驼峰变量</a></li></ul></div></div></section></div><script>
             var coll = document.getElementsByClassName('collapsible');
             var checkActiveCategory = true;
             for (var i = 0; i < coll.length; i++) {
@@ -54,7 +54,520 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="posts"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/liuxiaobai/blog/2019/08/14/Object.assign">模拟实现Object.assign</a></h1><p class="post-meta">August 14, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="" target="_blank" rel="noreferrer noopener">柳小白</a></p></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="objectassign"></a><a href="#objectassign" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Object.assign</h2>
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="posts"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/liuxiaobai/blog/2020/08/21/vue">iview</a></h1><p class="post-meta">August 21, 2020</p><div class="authorBlock"><p class="post-authorName"><a href="" target="_blank" rel="noreferrer noopener">六小白</a></p></div></header><article class="post-content"><div><span><h3><a class="anchor" aria-hidden="true" id="动态组件"></a><a href="#动态组件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>动态组件</h3>
+<pre><code class="hljs css language-javascript">&lt;component :is=<span class="hljs-string">"wrapperComponent"</span>&gt;
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">component</span>&gt;</span></span>
+
+...
+
+computed: {
+  wrapperComponent() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.affix ? <span class="hljs-string">'Affix'</span> : <span class="hljs-string">'div'</span>;
+  }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="provide-依赖注入"></a><a href="#provide-依赖注入" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>provide 依赖注入</h3>
+<p>由于使用 <code>$parent</code> 属性无法很好的扩展到更深层级的嵌套组件上</p>
+<p>vue提供了新的实例选项：provide 和 inject</p>
+<p>父组件</p>
+<pre><code class="hljs css language-javascript">provide () {
+  <span class="hljs-keyword">return</span> {
+      <span class="hljs-attr">anchorCom</span>: <span class="hljs-keyword">this</span>
+  };
+}
+</code></pre>
+<p>子组件</p>
+<pre><code class="hljs css language-javascript">inject: ['anchorCom']
+
+# 使用
+this.anchorCom.xxx
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="匹配锚点"></a><a href="#匹配锚点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>匹配锚点</h3>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> reg =  <span class="hljs-regexp">/#([^#]+)$/</span>
+<span class="hljs-keyword">var</span> match = reg.exec(<span class="hljs-string">'https://www.iviewui.com/components/anchor#AnchorLink_props'</span>)
+
+<span class="hljs-comment">// match</span>
+[
+  <span class="hljs-string">'#AnchorLink_props'</span>,
+  <span class="hljs-string">'AnchorLink_props'</span>,
+  ...
+]
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="节点元素滚动动画"></a><a href="#节点元素滚动动画" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>节点元素滚动动画</h3>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">scrollTop</span>(<span class="hljs-params">el, from = <span class="hljs-number">0</span>, to, duration = <span class="hljs-number">500</span>, endCallback</span>) </span>{
+    <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">window</span>.requestAnimationFrame) {
+        <span class="hljs-built_in">window</span>.requestAnimationFrame = (
+            <span class="hljs-built_in">window</span>.webkitRequestAnimationFrame ||
+            <span class="hljs-built_in">window</span>.mozRequestAnimationFrame ||
+            <span class="hljs-built_in">window</span>.msRequestAnimationFrame ||
+            <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">callback</span>) </span>{
+                <span class="hljs-keyword">return</span> <span class="hljs-built_in">window</span>.setTimeout(callback, <span class="hljs-number">1000</span>/<span class="hljs-number">60</span>);
+            }
+        );
+    }
+    <span class="hljs-keyword">const</span> difference = <span class="hljs-built_in">Math</span>.abs(<span class="hljs-keyword">from</span> - to);
+    <span class="hljs-keyword">const</span> step = <span class="hljs-built_in">Math</span>.ceil(difference / duration * <span class="hljs-number">50</span>);
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">scroll</span>(<span class="hljs-params">start, end, step</span>) </span>{
+        <span class="hljs-keyword">if</span> (start === end) {
+            endCallback &amp;&amp; endCallback();
+            <span class="hljs-keyword">return</span>;
+        }
+
+        <span class="hljs-keyword">let</span> d = (start + step &gt; end) ? end : start + step;
+        <span class="hljs-keyword">if</span> (start &gt; end) {
+            d = (start - step &lt; end) ? end : start - step;
+        }
+
+        <span class="hljs-keyword">if</span> (el === <span class="hljs-built_in">window</span>) {
+            <span class="hljs-built_in">window</span>.scrollTo(d, d);
+        } <span class="hljs-keyword">else</span> {
+            el.scrollTop = d;
+        }
+        <span class="hljs-built_in">window</span>.requestAnimationFrame(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> scroll(d, end, step));
+    }
+    scroll(<span class="hljs-keyword">from</span>, to, step);
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="通信"></a><a href="#通信" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>通信</h3>
+<pre><code class="hljs css language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">broadcast</span>(<span class="hljs-params">componentName, eventName, params</span>) </span>{
+    <span class="hljs-keyword">this</span>.$children.forEach(<span class="hljs-function"><span class="hljs-params">child</span> =&gt;</span> {
+        <span class="hljs-keyword">const</span> name = child.$options.name;
+
+        <span class="hljs-keyword">if</span> (name === componentName) {
+            child.$emit.apply(child, [eventName].concat(params));
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">// todo 如果 params 是空数组，接收到的会是 undefined</span>
+            broadcast.apply(child, [componentName, eventName].concat([params]));
+        }
+    });
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    <span class="hljs-attr">methods</span>: {
+        dispatch(componentName, eventName, params) {
+            <span class="hljs-keyword">let</span> parent = <span class="hljs-keyword">this</span>.$parent || <span class="hljs-keyword">this</span>.$root;
+            <span class="hljs-keyword">let</span> name = parent.$options.name;
+
+            <span class="hljs-keyword">while</span> (parent &amp;&amp; (!name || name !== componentName)) {
+                parent = parent.$parent;
+
+                <span class="hljs-keyword">if</span> (parent) {
+                    name = parent.$options.name;
+                }
+            }
+            <span class="hljs-keyword">if</span> (parent) {
+                parent.$emit.apply(parent, [eventName].concat(params));
+            }
+        },
+        broadcast(componentName, eventName, params) {
+            broadcast.call(<span class="hljs-keyword">this</span>, componentName, eventName, params);
+        }
+    }
+};
+</code></pre>
+<p>使用</p>
+<pre><code class="hljs css language-javascript">mixins: [ Emitter ]
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="传入v-model到组件内部"></a><a href="#传入v-model到组件内部" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>传入v-model到组件内部</h3>
+<pre><code class="hljs css language-javascript">props: {
+    <span class="hljs-attr">value</span>: {
+        <span class="hljs-attr">type</span>: [<span class="hljs-built_in">String</span>, <span class="hljs-built_in">Number</span>],
+        <span class="hljs-attr">default</span>: <span class="hljs-string">''</span>
+    }
+},
+data () {
+    <span class="hljs-keyword">return</span> {
+        <span class="hljs-attr">currentVal</span>: <span class="hljs-keyword">this</span>.value
+    }
+},
+<span class="hljs-attr">watch</span>: {
+    value (val) {
+        <span class="hljs-keyword">this</span>.currentVal = val
+    }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="获取元素布局信息"></a><a href="#获取元素布局信息" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>获取元素布局信息</h3>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">this</span>.$el.getBoundingClientRect()
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="回到顶部组件"></a><a href="#回到顶部组件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>回到顶部组件</h3>
+<p>当滚动高度大于等于100时， 显示回到顶部按钮</p>
+<p><img src="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/pageYOffset" alt="pageYOffset"></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-built_in">window</span>.pageYOffset &gt;= <span class="hljs-number">100</span>
+</code></pre>
+<p>获取<code>window</code>滚动的高度</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-built_in">document</span>.documentElement.scrollTop || <span class="hljs-built_in">document</span>.body.scrollTop
+</code></pre>
+</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/liuxiaobai/blog/2020/08/15/对象转内联样式">对象转内联样式</a></h1><p class="post-meta">August 15, 2020</p><div class="authorBlock"><p class="post-authorName"><a href="" target="_blank" rel="noreferrer noopener">六小白</a></p></div></header><article class="post-content"><div><span><h3><a class="anchor" aria-hidden="true" id="源码链接"></a><a href="#源码链接" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>源码链接</h3>
+<p><a href="https://github.com/NervJS/taro/blob/master/packages/taro/src/internal/inline-style.js">跳转</a></p>
+<h3><a class="anchor" aria-hidden="true" id="代码"></a><a href="#代码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>代码</h3>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> upperCasePattern = <span class="hljs-regexp">/([A-Z])/g</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dashify</span> (<span class="hljs-params">str</span>) </span>{
+  <span class="hljs-keyword">return</span> str.replace(upperCasePattern, dashLower)
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dashLower</span> (<span class="hljs-params">c</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-string">'-'</span> + c.toLowerCase()
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isObject</span> (<span class="hljs-params">val</span>) </span>{
+  <span class="hljs-keyword">return</span> val != <span class="hljs-literal">null</span> &amp;&amp; <span class="hljs-keyword">typeof</span> val === <span class="hljs-string">'object'</span> &amp;&amp; <span class="hljs-built_in">Array</span>.isArray(val) === <span class="hljs-literal">false</span>
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">inlineStyle</span> (<span class="hljs-params">obj</span>) </span>{
+  <span class="hljs-keyword">if</span> (obj == <span class="hljs-literal">null</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">''</span>
+  }
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> obj === <span class="hljs-string">'string'</span>) {
+    <span class="hljs-keyword">return</span> obj
+  }
+
+  <span class="hljs-keyword">if</span> (obj === <span class="hljs-literal">null</span> || obj === <span class="hljs-literal">undefined</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">''</span>
+  }
+
+  <span class="hljs-keyword">if</span> (!isObject(obj)) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">TypeError</span>(<span class="hljs-string">'style 只能是一个对象或字符串。'</span>)
+  }
+  <span class="hljs-comment">// [{backgroundColor: 'red'}] =&gt; 'background-color:red;'</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.keys(obj).map(<span class="hljs-function">(<span class="hljs-params">key</span>) =&gt;</span> dashify(key).concat(<span class="hljs-string">':'</span>).concat(obj[key])).join(<span class="hljs-string">';'</span>)
+
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="测试"></a><a href="#测试" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>测试</h3>
+<p><img src="https://raw.githubusercontent.com/stupidWall/liuxiaobai/master/img/blog/2019/20190814115913.jpg" /></p>
+</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/liuxiaobai/blog/2019/08/27/jsonp">实现一个JSONP</a></h1><p class="post-meta">August 27, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="" target="_blank" rel="noreferrer noopener">六小白</a></p></div></header><article class="post-content"><div><span><h3><a class="anchor" aria-hidden="true" id="代码如下"></a><a href="#代码如下" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>代码如下</h3>
+<pre><code class="hljs css language-javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">window,document</span>) </span>{
+<span class="hljs-meta">    "use strict"</span>;
+    <span class="hljs-keyword">var</span> jsonp = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">url,data,callback</span>) </span>{
+
+        <span class="hljs-comment">// 1.将传入的data数据转化为url字符串形式</span>
+        <span class="hljs-comment">// {id:1,name:'jack'} =&gt; id=1&amp;name=jack</span>
+        <span class="hljs-keyword">var</span> dataString = url.indexof(<span class="hljs-string">'?'</span>) == <span class="hljs-number">-1</span>? <span class="hljs-string">'?'</span>: <span class="hljs-string">'&amp;'</span>;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> data){
+            dataString += key + <span class="hljs-string">'='</span> + data[key] + <span class="hljs-string">'&amp;'</span>;
+        };
+
+        <span class="hljs-comment">// 2 处理url中的回调函数</span>
+        <span class="hljs-comment">// cbFuncName回调函数的名字 ：my_json_cb_名字的前缀 + 随机数（把小数点去掉）</span>
+        <span class="hljs-keyword">var</span> cbFuncName = <span class="hljs-string">'my_json_cb_'</span> + <span class="hljs-built_in">Math</span>.random().toString().replace(<span class="hljs-string">'.'</span>,<span class="hljs-string">''</span>);
+        dataString += <span class="hljs-string">'callback='</span> + cbFuncName;
+
+        <span class="hljs-comment">// 3.创建一个script标签并插入到页面中</span>
+        <span class="hljs-keyword">var</span> scriptEle = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'script'</span>);
+        scriptEle.src = url + dataString;
+
+        <span class="hljs-comment">// 4.挂载回调函数</span>
+        <span class="hljs-built_in">window</span>[cbFuncName] = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+            callback(data);
+            <span class="hljs-comment">// 处理完回调函数的数据之后，删除jsonp的script标签</span>
+            <span class="hljs-built_in">document</span>.body.removeChild(scriptEle);
+        }
+
+        <span class="hljs-built_in">document</span>.body.appendChild(scriptEle);
+    }
+
+    <span class="hljs-built_in">window</span>.$jsonp = jsonp;
+
+})(<span class="hljs-built_in">window</span>,<span class="hljs-built_in">document</span>)
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="步骤"></a><a href="#步骤" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>步骤</h3>
+<ul>
+<li><p>使用时，传入参数<code>key</code>:<code>value</code>对象形式，则需要把它转化为<code>url</code>参数形式，拼接起来， 即<code>{id:1,name:'jack'} =&gt; id=1&amp;name=jack</code></p></li>
+<li><p>回调函数的处理</p></li>
+<li><p>创建一个script标签并插入到页面中<code>createElement</code>、<code>appendChild</code></p></li>
+<li><p>挂载回调函数， 回调函数里，处理完业务逻辑后，移除<code>script</code>标签</p></li>
+</ul>
+</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/liuxiaobai/blog/2019/08/26/实现一个Promise">实现一个Promise</a></h1><p class="post-meta">August 26, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="" target="_blank" rel="noreferrer noopener">六小白</a></p></div></header><article class="post-content"><div><span><p><a href="http://www.conardli.top/docs/JavaScript/%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0promise.html#%E5%9F%BA%E7%A1%80%E7%89%88%E6%9C%AC">文章来源</a></p>
+<h3><a class="anchor" aria-hidden="true" id="promise-怎么用的"></a><a href="#promise-怎么用的" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>promise</code>怎么用的？</h3>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+    resolve(<span class="hljs-string">'hello'</span>)
+})
+p.then(<span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(v) 
+    <span class="hljs-comment">// 'hello'</span>
+})
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="分析"></a><a href="#分析" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>分析</h3>
+<ul>
+<li><p><code>Promise</code>接受一个函数， 该函数有2参数，分别是<code>resolve</code>、<code>reject</code></p></li>
+<li><p><code>resolve</code> 将<code>PENDING</code>改变为<code>FULFILLED</code></p></li>
+<li><p><code>reject</code> 将<code>PENDING</code>改变为<code>REJECTED</code></p></li>
+<li><p>变为<code>FULFILLED</code>状态后具有一个唯一的<code>value</code></p></li>
+<li><p>变为<code>REJECTED</code>状态后具有一个唯一的<code>reason</code></p></li>
+<li><p><code>Promise</code>只能从<code>PENDING</code>改变为<code>FULFILLED</code>、<code>REJECTED</code>， 只能改变一次</p></li>
+</ul>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> PENDING = <span class="hljs-string">'pending'</span>;
+<span class="hljs-keyword">const</span> FULFILLED = <span class="hljs-string">'fulfilled'</span>;
+<span class="hljs-keyword">const</span> REJECTED = <span class="hljs-string">'rejected'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyPromise</span>(<span class="hljs-params">executor</span>) </span>{
+    <span class="hljs-keyword">this</span>.state = PENDING;
+    <span class="hljs-keyword">this</span>.value = <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">this</span>.reason = <span class="hljs-literal">null</span>;
+
+    <span class="hljs-keyword">const</span> resolve = <span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.state === PENDING) {
+        <span class="hljs-keyword">this</span>.state = FULFILLED;
+        <span class="hljs-keyword">this</span>.value = value;
+    }
+    }
+
+    <span class="hljs-keyword">const</span> reject = <span class="hljs-function">(<span class="hljs-params">reason</span>) =&gt;</span> {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.state === PENDING) {
+        <span class="hljs-keyword">this</span>.state = REJECTED;
+        <span class="hljs-keyword">this</span>.reason = reason;
+    }
+    }
+
+    <span class="hljs-keyword">try</span> {
+    executor(resolve, reject);
+    } <span class="hljs-keyword">catch</span> (reason) {
+    reject(reason);
+    }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="then-方法"></a><a href="#then-方法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>then</code>方法</h3>
+<ul>
+<li><p><code>then</code>方法接受两个参数<code>onFulfilled</code>、<code>onRejected</code>，它们分别在状态由<code>PENDING</code>改变为<code>FULFILLED</code>、<code>REJECTED</code>后调用</p></li>
+<li><p>一个<code>promise</code>可绑定多个then方法</p></li>
+<li><p><code>then</code>方法可以同步调用也可以异步调用, 同步调用：状态已经改变，直接调用<code>onFulfilled</code>方法, 异步调用：状态还是<code>PENDING</code>，将<code>onFulfilled</code>、<code>onRejected</code>分别加入两个函数数组<code>onFulfilledCallbacks</code>、<code>onRejectedCallbacks</code>，当异步调用<code>resolve</code>和<code>reject</code>时，将两个数组中绑定的事件循环执行。</p></li>
+</ul>
+<pre><code class="hljs css language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyPromise</span>(<span class="hljs-params">executor</span>) </span>{
+    <span class="hljs-keyword">this</span>.state = PENDING;
+    <span class="hljs-keyword">this</span>.value = <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">this</span>.reason = <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">this</span>.onFulfilledCallbacks = [];
+    <span class="hljs-keyword">this</span>.onRejectedCallbacks = [];
+
+    <span class="hljs-keyword">const</span> resolve = <span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.state === PENDING) {
+        <span class="hljs-keyword">this</span>.state = FULFILLED;
+        <span class="hljs-keyword">this</span>.value = value;
+        <span class="hljs-keyword">this</span>.onFulfilledCallbacks.forEach(<span class="hljs-function"><span class="hljs-params">fun</span> =&gt;</span> {
+        fun();
+        });
+    }
+    }
+
+    <span class="hljs-keyword">const</span> reject = <span class="hljs-function">(<span class="hljs-params">reason</span>) =&gt;</span> {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.state === PENDING) {
+        <span class="hljs-keyword">this</span>.state = REJECTED;
+        <span class="hljs-keyword">this</span>.reason = reason;
+        <span class="hljs-keyword">this</span>.onRejectedCallbacks.forEach(<span class="hljs-function"><span class="hljs-params">fun</span> =&gt;</span> {
+        fun();
+        });
+    }
+    }
+
+    <span class="hljs-keyword">try</span> {
+    executor(resolve, reject);
+    } <span class="hljs-keyword">catch</span> (reason) {
+    reject(reason);
+    }
+}
+
+MyPromise.prototype.then = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">onFulfilled, onRejected</span>) </span>{
+    <span class="hljs-keyword">switch</span> (<span class="hljs-keyword">this</span>.state) {
+    <span class="hljs-keyword">case</span> FULFILLED:
+        onFulfilled(<span class="hljs-keyword">this</span>.value);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> REJECTED:
+        onFulfilled(<span class="hljs-keyword">this</span>.value);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> PENDING:
+        <span class="hljs-keyword">this</span>.onFulfilledCallbacks.push(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        onFulfilled(<span class="hljs-keyword">this</span>.value);
+        })
+        <span class="hljs-keyword">this</span>.onRejectedCallbacks.push(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        onRejected(<span class="hljs-keyword">this</span>.reason);
+        })
+        <span class="hljs-keyword">break</span>;
+    }
+}
+</code></pre>
+<ul>
+<li>虽然resolve是同步执行的，我们必须保证then是异步调用的，我们用settimeout来模拟异步调用</li>
+</ul>
+<pre><code class="hljs css language-javascript"> MyPromise.prototype.then = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">onFulfilled, onRejected</span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> onFulfilled != <span class="hljs-string">'function'</span>) {
+    onFulfilled = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>{
+        <span class="hljs-keyword">return</span> value;
+    }
+    }
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> onRejected != <span class="hljs-string">'function'</span>) {
+    onRejected = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">reason</span>) </span>{
+        <span class="hljs-keyword">throw</span> reason;
+    }
+    }
+    <span class="hljs-keyword">switch</span> (<span class="hljs-keyword">this</span>.state) {
+    <span class="hljs-keyword">case</span> FULFILLED:
+        setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        onFulfilled(<span class="hljs-keyword">this</span>.value);
+        }, <span class="hljs-number">0</span>);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> REJECTED:
+        setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        onRejected(<span class="hljs-keyword">this</span>.reason);
+        }, <span class="hljs-number">0</span>);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> PENDING:
+        <span class="hljs-keyword">this</span>.onFulfilledCallbacks.push(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            onFulfilled(<span class="hljs-keyword">this</span>.value);
+        }, <span class="hljs-number">0</span>);
+        })
+        <span class="hljs-keyword">this</span>.onRejectedCallbacks.push(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            onRejected(<span class="hljs-keyword">this</span>.reason);
+        }, <span class="hljs-number">0</span>);
+        })
+        <span class="hljs-keyword">break</span>;
+    }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="then-方法链式调用"></a><a href="#then-方法链式调用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>then</code>方法链式调用</h3>
+<p>保证链式调用，即<code>then</code>方法中要返回一个新的<code>promise</code>，并将<code>then</code>方法的返回值进行<code>resolve</code></p>
+<pre><code class="hljs css language-javascript">MyPromise.prototype.then = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">onFulfilled, onRejected</span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> onFulfilled != <span class="hljs-string">'function'</span>) {
+    onFulfilled = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>{
+        <span class="hljs-keyword">return</span> value;
+    }
+    }
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> onRejected != <span class="hljs-string">'function'</span>) {
+    onRejected = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">reason</span>) </span>{
+        <span class="hljs-keyword">throw</span> reason;
+    }
+    }
+    <span class="hljs-keyword">const</span> promise2 = <span class="hljs-keyword">new</span> MyPromise(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+    <span class="hljs-keyword">switch</span> (<span class="hljs-keyword">this</span>.state) {
+        <span class="hljs-keyword">case</span> FULFILLED:
+        setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">const</span> x = onFulfilled(<span class="hljs-keyword">this</span>.value);
+            resolve(x);
+            } <span class="hljs-keyword">catch</span> (reason) {
+            reject(reason);
+            }
+        }, <span class="hljs-number">0</span>);
+        <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> REJECTED:
+        setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">const</span> x = onRejected(<span class="hljs-keyword">this</span>.reason);
+            resolve(x);
+            } <span class="hljs-keyword">catch</span> (reason) {
+            reject(reason);
+            }
+        }, <span class="hljs-number">0</span>);
+        <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> PENDING:
+        <span class="hljs-keyword">this</span>.onFulfilledCallbacks.push(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            <span class="hljs-keyword">try</span> {
+                <span class="hljs-keyword">const</span> x = onFulfilled(<span class="hljs-keyword">this</span>.value);
+                resolve(x);
+            } <span class="hljs-keyword">catch</span> (reason) {
+                reject(reason);
+            }
+            }, <span class="hljs-number">0</span>);
+        })
+        <span class="hljs-keyword">this</span>.onRejectedCallbacks.push(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            <span class="hljs-keyword">try</span> {
+                <span class="hljs-keyword">const</span> x = onRejected(<span class="hljs-keyword">this</span>.reason);
+                resolve(x);
+            } <span class="hljs-keyword">catch</span> (reason) {
+                reject(reason);
+            }
+            }, <span class="hljs-number">0</span>);
+        })
+        <span class="hljs-keyword">break</span>;
+    }
+    })
+    <span class="hljs-keyword">return</span> promise2;
+}
+
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="catch-方法"></a><a href="#catch-方法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>catch</code>方法</h3>
+<p>若上面没有定义<code>reject</code>方法，所有的异常会走向<code>catch</code>方法</p>
+<pre><code class="hljs css language-javascript">MyPromise.prototype.catch = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">onRejected</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.then(<span class="hljs-literal">null</span>, onRejected);
+};
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="finally-方法"></a><a href="#finally-方法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>finally</code>方法</h3>
+<p>不管是resolve还是reject都会调用finally</p>
+<pre><code class="hljs css language-javascript">MyPromise.prototype.finally = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">fn</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.then(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> {
+       fn();
+       <span class="hljs-keyword">return</span> value;
+    }, reason =&gt; {
+        fn();
+        <span class="hljs-keyword">throw</span> reason;
+    });
+};
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="promiseresolve"></a><a href="#promiseresolve" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Promise.resolve</code></h3>
+<p><code>Promise.resolve</code>用来生成一个直接处于<code>FULFILLED</code>状态的<code>Promise</code></p>
+<pre><code class="hljs css language-javascript">MyPromise.resolve = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> MyPromise(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+    resolve(value);
+  });
+};
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="promisereject"></a><a href="#promisereject" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>Promise.reject</code></h3>
+<p><code>Promise.reject</code>用来生成一个直接处于<code>REJECTED</code>状态的<code>Promise</code></p>
+<pre><code class="hljs css language-javascript">MyPromise.reject = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> MyPromise(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+    reject(reason);
+  });
+};
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="all-方法"></a><a href="#all-方法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>all</code>方法</h3>
+<p>接受一个<code>promise</code>数组，当所有<code>promise</code>状态<code>resolve</code>后，执行<code>resolve</code></p>
+<pre><code class="hljs css language-javascript">MyPromise.all = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">promises</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+    <span class="hljs-keyword">if</span> (promises.length === <span class="hljs-number">0</span>) {
+        resolve([]);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">let</span> result = [];
+        <span class="hljs-keyword">let</span> index = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; promises.length; i++) {
+        promises[i].then(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> {
+            result[i] = data;
+            <span class="hljs-keyword">if</span> (++index === promises.length) {
+            resolve(result);
+            }
+        }, err =&gt; {
+            reject(err);
+            <span class="hljs-keyword">return</span>;
+        });
+        }
+    }
+    });
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="race-方法"></a><a href="#race-方法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>race</code>方法</h3>
+<p>接受一个<code>promise</code>数组，当有一个<code>promise</code>状态<code>resolve</code>后，执行<code>resolve</code></p>
+<pre><code class="hljs css language-javascript">MyPromise.race = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">promises</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+    <span class="hljs-keyword">if</span> (promises.length === <span class="hljs-number">0</span>) {
+        resolve();
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">let</span> index = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; promises.length; i++) {
+        promises[i].then(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> {
+            resolve(data);
+        }, err =&gt; {
+            reject(err);
+            <span class="hljs-keyword">return</span>;
+        });
+        }
+    }
+    });
+}
+</code></pre>
+</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/liuxiaobai/blog/2019/08/14/Object.assign">模拟实现Object.assign</a></h1><p class="post-meta">August 14, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="" target="_blank" rel="noreferrer noopener">柳小白</a></p></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="objectassign"></a><a href="#objectassign" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Object.assign</h2>
 <h3><a class="anchor" aria-hidden="true" id="用法"></a><a href="#用法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>用法</h3>
 <p>用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象</p>
 <pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> target = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">2</span> };
@@ -747,193 +1260,6 @@ changeObjProperty(webSite);
 <p>模拟实现一个深拷贝，并考虑对象相互引用以及 Symbol 拷贝的情况</p>
 <pre><code class="hljs">略
 </code></pre>
-</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/liuxiaobai/blog/2019/07/06/泛型">泛型（TypeScript学习笔记）</a></h1><p class="post-meta">July 6, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="" target="_blank" rel="noreferrer noopener">柳小白</a></p></div></header><article class="post-content"><div><span><h3><a class="anchor" aria-hidden="true" id="泛型"></a><a href="#泛型" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>泛型</h3>
-<p>解决函数传入参数类型与函数返回值类型一致的问题。</p>
-<p>一个函数，我希望传入数字，返回数字；传入字符串，返回字符串， 即</p>
-<pre><code class="hljs css language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn1</span> (<span class="hljs-params">a: number</span>): <span class="hljs-title">number</span> </span>{
-  <span class="hljs-keyword">return</span> a + <span class="hljs-number">1</span>
-}
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn2</span> (<span class="hljs-params">b: string</span>): <span class="hljs-title">string</span> </span>{
-  <span class="hljs-keyword">return</span> b + <span class="hljs-string">' :fn2'</span>
-}
-</code></pre>
-<p>有没有支持不同类型的方式，any</p>
-<pre><code class="hljs css language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn3</span> (<span class="hljs-params">c: any</span>): <span class="hljs-title">any</span> </span>{
-  <span class="hljs-keyword">return</span> c
-}
-</code></pre>
-<p>可是使用any，不能保证返回值类型和传入参数类型属于相同类型</p>
-<p>使用泛型！</p>
-<pre><code class="hljs css language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn1</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">a: T</span>): <span class="hljs-title">T</span></span>{
-  <span class="hljs-keyword">return</span> a + <span class="hljs-number">1</span>
-}
-</code></pre>
-<p>可以看到，使用尖括号<T>即可使用泛型函数</p>
-<blockquote>
-<p>还有一种方式使用泛型函数：类型推断，什么也不用做，智能判断</p>
-</blockquote>
-<p>有个问题，下面的泛型函数，函数体中访问了参数的<code>length</code>属性，如果传入参数属字符串或数组，没问题，但如果是<code>number</code>类型呢，<code>length</code>属性肯定是<code>undefined</code></p>
-<pre><code class="hljs css language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn1</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">a: T</span>): <span class="hljs-title">T</span></span>{
-  <span class="hljs-built_in">console</span>.log(a.length)
-  <span class="hljs-keyword">return</span> a + <span class="hljs-number">1</span>
-}
-</code></pre>
-<p>使用泛型变量， 声明泛型数组即可</p>
-<pre><code class="hljs css language-javascript">function fn1&lt;T&gt;(a: T[]): T[]{
-  console.log(a.length)
-  return a + 1
-}
-</code></pre>
-</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/liuxiaobai/blog/2019/07/06/格式化日期">格式化日期</a></h1><p class="post-meta">July 6, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="" target="_blank" rel="noreferrer noopener">柳小白</a></p></div></header><article class="post-content"><div><span><h3><a class="anchor" aria-hidden="true" id="代码如下"></a><a href="#代码如下" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>代码如下</h3>
-<p><a href="https://github.com/didi/cube-ui/blob/dev/src/common/lang/date.js">开源项目链接地址</a></p>
-<pre><code class="hljs css language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatType</span>(<span class="hljs-params">type, format, value, regExpAttributes</span>) </span>{
-  <span class="hljs-keyword">const</span> regExpMap = {
-    <span class="hljs-attr">year</span>: <span class="hljs-string">'(Y+)'</span>,
-    <span class="hljs-attr">month</span>: <span class="hljs-string">'(M+)'</span>,
-    <span class="hljs-attr">date</span>: <span class="hljs-string">'(D+)'</span>,
-    <span class="hljs-attr">hour</span>: <span class="hljs-string">'(h+)'</span>,
-    <span class="hljs-attr">minute</span>: <span class="hljs-string">'(m+)'</span>,
-    <span class="hljs-attr">second</span>: <span class="hljs-string">'(s+)'</span>,
-    <span class="hljs-attr">quarter</span>: <span class="hljs-string">'(q+)'</span>,
-    <span class="hljs-attr">millisecond</span>: <span class="hljs-string">'(S)'</span>
-  }
-
-  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(regExpMap[type], regExpAttributes).test(format)) {
-    <span class="hljs-keyword">const</span> replaceStr = type === <span class="hljs-string">'year'</span>
-                       ? value.toString().substr(<span class="hljs-number">4</span> - <span class="hljs-built_in">RegExp</span>.$<span class="hljs-number">1.</span>length)
-                       : (<span class="hljs-built_in">RegExp</span>.$<span class="hljs-number">1.</span>length === <span class="hljs-number">1</span>) ? value : pad(value)
-    format = format.replace(<span class="hljs-built_in">RegExp</span>.$<span class="hljs-number">1</span>, replaceStr)
-  }
-
-  <span class="hljs-keyword">return</span> format
-}
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pad</span>(<span class="hljs-params">value</span>) </span>{
-  <span class="hljs-keyword">return</span> (<span class="hljs-string">'00'</span> + value).substr((<span class="hljs-string">''</span> + value).length)
-}
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatDate</span>(<span class="hljs-params">date, format</span>) </span>{
-  <span class="hljs-keyword">const</span> map = {
-    <span class="hljs-attr">year</span>: {
-      <span class="hljs-attr">value</span>: date.getFullYear(),
-      <span class="hljs-attr">regExpAttributes</span>: <span class="hljs-string">'i'</span>
-    },
-    <span class="hljs-attr">month</span>: {
-      <span class="hljs-attr">value</span>: date.getMonth() + <span class="hljs-number">1</span>
-    },
-    <span class="hljs-attr">date</span>: {
-      <span class="hljs-attr">value</span>: date.getDate(),
-      <span class="hljs-attr">regExpAttributes</span>: <span class="hljs-string">'i'</span>
-    },
-    <span class="hljs-attr">hour</span>: {
-      <span class="hljs-attr">value</span>: date.getHours(),
-      <span class="hljs-attr">regExpAttributes</span>: <span class="hljs-string">'i'</span>
-    },
-    <span class="hljs-attr">minute</span>: {
-      <span class="hljs-attr">value</span>: date.getMinutes()
-    },
-    <span class="hljs-attr">second</span>: {
-      <span class="hljs-attr">value</span>: date.getSeconds()
-    },
-    <span class="hljs-attr">quarter</span>: {
-      <span class="hljs-attr">value</span>: <span class="hljs-built_in">Math</span>.floor((date.getMonth() + <span class="hljs-number">3</span>) / <span class="hljs-number">3</span>),
-      <span class="hljs-attr">regExpAttributes</span>: <span class="hljs-string">'i'</span>
-    },
-    <span class="hljs-attr">millisecond</span>: {
-      <span class="hljs-attr">value</span>: date.getMilliseconds()
-    }
-  }
-
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> key <span class="hljs-keyword">in</span> map) {
-    format = formatType(key, format, map[key].value, map[key].regExpAttributes)
-  }
-
-  <span class="hljs-keyword">return</span> format
-}
-</code></pre>
-<h4><a class="anchor" aria-hidden="true" id="测试"></a><a href="#测试" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>测试</h4>
-<pre><code class="hljs"><span class="hljs-built_in">console</span>.log(
-  <span class="hljs-string">'result:'</span>,
-  formatDate(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(), <span class="hljs-string">'YYYY.MM.DD hh:mm'</span>)
-)
-</code></pre>
-<p><img src="https://raw.githubusercontent.com/stupidWall/liuxiaobai/master/img/blog/2019/20190706101213.jpg" /></p>
-<h4><a class="anchor" aria-hidden="true" id="演绎过程"></a><a href="#演绎过程" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>演绎过程</h4>
-<p>根据传入日期对象参数，获得对应的月份<code>7</code>, 根据匹配规则<code>YYYY.MM.DD hh:mm</code>， 通过正则<code>(M+)</code>找出<code>MM</code>, 接着把<code>7</code>替换<code>MM</code>， 同时使用<code>pad</code>函数处理下<code>7</code> =&gt; <code>07</code>, <code>24</code> =&gt; <code>24</code>情况，以此类推。</p>
-<h4><a class="anchor" aria-hidden="true" id="补零-pad"></a><a href="#补零-pad" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>补零<code>pad</code></h4>
-<pre><code class="hljs css language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pad</span>(<span class="hljs-params">value</span>) </span>{
-  <span class="hljs-keyword">return</span> (<span class="hljs-string">'00'</span> + value).substr((<span class="hljs-string">''</span> + value).length)
-}
-</code></pre>
-<p>如果值<code>1</code>位数<code>7</code>, 前面加<code>00</code>, 即<code>007</code>, 剪掉<code>0</code>， 即<code>07</code></p>
-<p>如果值<code>2</code>位数<code>24</code>, 前面加<code>00</code>, 即<code>0024</code>, 剪掉<code>00</code>， 即<code>24</code></p>
-<p>共同点，剪掉的是值的长度。</p>
-<p>数字 + 字符串，一定是字符串相加，不是数字的累加，这点要注意。</p>
-</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/liuxiaobai/blog/2019/07/06/枚举">枚举（TypeScript学习笔记）</a></h1><p class="post-meta">July 6, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="" target="_blank" rel="noreferrer noopener">柳小白</a></p></div></header><article class="post-content"><div><span><h3><a class="anchor" aria-hidden="true" id="枚举"></a><a href="#枚举" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>枚举</h3>
-<p><a href="https://codepen.io/stupidWall/pen/pXOQdN?editors=0010">戳我试试</a></p>
-<h4><a class="anchor" aria-hidden="true" id="数字枚举"></a><a href="#数字枚举" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>数字枚举</h4>
-<p>假设后台定义三个状态：</p>
-<p><code>1</code> 待支付
-<code>2</code> 待发货
-<code>3</code> 已完成</p>
-<p>前端使用的时候，如果整个项目中到处都是<code>1</code>、<code>2</code>、<code>3</code>, 有个问题就是不够语义，维护起来时间成本也较高， 想办法映射成变量：</p>
-<pre><code class="hljs css language-javascript">enum Status {
-  outPay = <span class="hljs-number">1</span>,
-  outDelivery = <span class="hljs-number">2</span>,
-  done = <span class="hljs-number">3</span>
-}
-</code></pre>
-<p>当使用都时候，可以判断<code>Status.outPay === status</code>即可</p>
-<p>针对数字枚举，还有一个反向映射， 即<code>Status[1]</code>值是<code>outPay</code></p>
-<p>打印出<code>Status</code>可以看到</p>
-<p><img src="https://raw.githubusercontent.com/stupidWall/liuxiaobai/master/img/blog/2019/20190706195943.jpg" width='600' /></p>
-<h4><a class="anchor" aria-hidden="true" id="字符串枚举"></a><a href="#字符串枚举" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>字符串枚举</h4>
-<pre><code class="hljs css language-javascript">enum newVal {
-  a = <span class="hljs-string">'aa'</span>,
-  b = <span class="hljs-string">'bb'</span>
-}
-</code></pre>
-<blockquote>
-<p>字符串枚举中没有反向映射</p>
-</blockquote>
-</span></div></article></div><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/liuxiaobai/blog/2019/07/06/react生命周期">React生命周期</a></h1><p class="post-meta">July 6, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="" target="_blank" rel="noreferrer noopener">柳小白</a></p></div></header><article class="post-content"><div><span><h3><a class="anchor" aria-hidden="true" id="生命周期分两大类"></a><a href="#生命周期分两大类" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>生命周期分两大类</h3>
-<ul>
-<li>挂载&amp;卸载
-<ul>
-<li><p>挂载</p>
-<ul>
-<li>下面<code>2</code>个函数只会在组件初始化时运行一次</li>
-<li><code>componentWillMount</code>： 在<code>render</code>函数之前执行， 可以使用<code>setState</code>， 但初始化只会运行一次，所以这里调用没意义，可以在<code>constructor</code>里初始化<code>state</code></li>
-<li><code>componentDidMount</code> ： 在<code>render</code>函数之后执行， 可以<code>setState</code></li>
-</ul></li>
-<li><p>卸载</p>
-<ul>
-<li><code>componentWillUnmount</code>： 事件回收或清除定时器等工作</li>
-</ul></li>
-</ul></li>
-</ul>
-<ul>
-<li>接收新数据，更新组件
-<ul>
-<li><p>组件自身<code>setState</code>的更新：</p>
-<ul>
-<li><code>shouldComponentUpdate</code>： 能拿到要更新的<code>props</code>和<code>state</code>， 根据业务需求，可以进行判断，返回<code>false</code>即不更新， 这里可以做一个性能调优的处理。</li>
-<li><code>componentWillUpdate</code>： 组件即将更新，这里不能使用<code>setState</code></li>
-<li><code>render</code></li>
-<li><code>componentDidUpdate</code></li>
-</ul></li>
-<li><p>父组件<code>props</code>改变的更新：</p>
-<ul>
-<li><code>componentWillReceiveProps</code>：接受到<code>props</code>新的属性，这里可以跟<code>this.props.属性</code>比较做一些判断，在更新之前还有一次<code>setState</code>的机会</li>
-<li><code>shouldComponentUpdate</code></li>
-<li><code>componentWillUpdate</code></li>
-<li><code>shouldComponentUpdate</code></li>
-<li><code>render</code></li>
-<li><code>componentDidUpdate</code></li>
-</ul></li>
-</ul></li>
-</ul>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-next" href="/liuxiaobai/blog/page2/">Next →</a></div></div></div></div></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
