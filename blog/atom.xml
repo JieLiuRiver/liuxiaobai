@@ -31,6 +31,28 @@
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[实现栈并应用]]></title>
+        <id>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/05/stack.html</id>
+        <link href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/05/stack.html">
+        </link>
+        <updated>2019-09-05T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<h3><a class="anchor" aria-hidden="true" id="栈的特性"></a><a href="#栈的特性" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>栈的特性</h3> <ul> <li>只能从栈顶操作</li> <li>先进的后出</li> </ul> <h3><a class="anchor" aria-hidden="true" id="数组实现"></a><a href="#数组实现" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>数组实现</h3> <pre><code class="hljs css language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Stack</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-comment">// 使用数组存储数据</span> <span class="hljs-keyword">var</span> items = []; <span class="hljs-comment">// push方法向栈里压入一个元素</span> <span class="hljs-keyword">this</span>.push = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">item</span>)</span>{ items.push(item); }; <span class="hljs-comment">// pop方法把栈顶的元素弹出</span> <span class="hljs-keyword">this</span>.pop = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-keyword">return</span> items.pop(); }; <span class="hljs-comment">// top 方法返回栈顶元素</span> <span class="hljs-keyword">this</span>.top = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-keyword">return</span> ...</code></pre>]]></summary>
+        <author>
+            <name>六小白</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[实现队列并应用]]></title>
+        <id>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/05/queue.html</id>
+        <link href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/05/queue.html">
+        </link>
+        <updated>2019-09-05T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<h3><a class="anchor" aria-hidden="true" id="队列"></a><a href="#队列" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>队列</h3> <ul> <li>先进后出</li> </ul> <pre><code class="hljs css language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Queue</span> (<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">this</span>.stores = [] } Queue.prototype.enqueue = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) </span>{ <span class="hljs-keyword">this</span>.stores.push(item) } Queue.prototype.dequeue = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.stores.shift() } Queue.prototype.head = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.stores[<span class="hljs-number">0</span>] } Qu...</code></pre>]]></summary>
+        <author>
+            <name>六小白</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[实现一个JSONP]]></title>
         <id>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/08/27/jsonp.html</id>
         <link href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/08/27/jsonp.html">
@@ -42,12 +64,34 @@
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[柯里化]]></title>
+        <id>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/08/26/柯里化.html</id>
+        <link href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/08/26/柯里化.html">
+        </link>
+        <updated>2019-08-26T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<h3><a class="anchor" aria-hidden="true" id="概念"></a><a href="#概念" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>概念</h3> <p>柯里化是一种将使用多个参数的一个函数转换成一系列使用一个参数的函数的技术， 其实是用闭包把参数保存起来，当参数的数量足够执行函数了，就开始执行函数</p> <h3><a class="anchor" aria-hidden="true" id="实现"></a><a href="#实现" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>实现</h3> <pre><code class="hljs css language-javascript"> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">currying</span>(<span class="hljs-params">fn, ...args</span>) </span>{ <span class="hljs-keyword">if</span> (args.length &gt;= fn.length) { <span class="hljs-keyword">return</span> fn(...args); } <span class="hljs-keyword">else</span> { <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">...args2</span>) =&gt;</span> currying(fn, ...args, ...args2); } } </code></pre> ]]></summary>
+        <author>
+            <name>六小白</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[实现一个Promise]]></title>
         <id>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/08/26/实现一个Promise.html</id>
         <link href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/08/26/实现一个Promise.html">
         </link>
         <updated>2019-08-26T06:00:00Z</updated>
         <summary type="html"><![CDATA[<p><a href="http://www.conardli.top/docs/JavaScript/%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0promise.html#%E5%9F%BA%E7%A1%80%E7%89%88%E6%9C%AC">文章来源</a></p> <h3><a class="anchor" aria-hidden="true" id="promise-怎么用的"></a><a href="#promise-怎么用的" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a><code>promise</code>怎么用的？</h3> <pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> { resolve(<span class="hljs-string">'hello'</span>) }) p.then(<span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> { <span class="hljs-built_in">console</span>.log(v) <span class="hljs-comment">// 'hello'</span> }) </code></pre> <h3><a class="anchor" aria-hidden="true" id="分析"></a><a href="#分析" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>分析</h3> <ul> <li><p><code>Promise</code>接受一个函数， 该函数有2参数，分别是<code>resolve</code>、<code>reject</code></p></li> <li><p><code>resolve</code> 将<code>PENDING</code>改变为<code>FULFILLED</code></p></li> <li><p><code>reject</code> 将<code>PENDING</code>改变为<code>REJECTED</code></p></li> <li><p>变为<code>FULFILLED</code>状态后具有一个...</p></li></ul>]]></summary>
+        <author>
+            <name>六小白</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[实现一个instanceof]]></title>
+        <id>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/08/26/实现instanceof.html</id>
+        <link href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/08/26/实现instanceof.html">
+        </link>
+        <updated>2019-08-26T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<h3><a class="anchor" aria-hidden="true" id="原理"></a><a href="#原理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>原理</h3> <pre><code class="hljs css language-javascript">a <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Object</span> </code></pre> <p>判断Object的prototype是否在a的原型链上</p> <h3><a class="anchor" aria-hidden="true" id="实现"></a><a href="#实现" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>实现</h3> <pre><code class="hljs css language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myInstanceof</span>(<span class="hljs-params">target, origin</span>) </span>{ <span class="hljs-keyword">const</span> proto = target.__proto__ <span class="hljs-keyword">if</span> (proto) { <span class="hljs-keyword">if</span> (proto === origin.prototype) { <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span> } <span class="hljs-keyword">else</span> { <span class="hljs-keyword">return</span> myInstanceof(proto, origin) } } <span class="hljs-keyword">else</span> { <span class="hljs-keyword">return</span> <span class="hljs-literal">fal...</span></code></pre>]]></summary>
         <author>
             <name>六小白</name>
         </author>

@@ -1,0 +1,264 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>实现栈并应用 · 柳小白</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="### 栈的特性"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="实现栈并应用 · 柳小白"/><meta property="og:type" content="website"/><meta property="og:url" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/05/stack"/><meta property="og:description" content="### 栈的特性"/><meta property="og:image" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/img/1.jpeg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/img/1.jpeg"/><link rel="shortcut icon" href="/liuxiaobai/"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css"/><link rel="alternate" type="application/atom+xml" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/atom.xml" title="柳小白 Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/feed.xml" title="柳小白 Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/liuxiaobai/js/scrollSpy.js"></script><link rel="stylesheet" href="/liuxiaobai/css/main.css"/><script src="/liuxiaobai/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/liuxiaobai/"><h2 class="headerTitle">柳小白</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/liuxiaobai/blog/" target="_self">Blog</a></li><li class=""><a href="https://github.com/stupidWall/liuxiaobai" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>All Blog Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">All Blog Posts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2020/08/21/vue">iview</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2020/08/15/对象转内联样式">对象转内联样式</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/liuxiaobai/blog/2019/09/05/stack">实现栈并应用</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/05/queue">实现队列并应用</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/27/jsonp">实现一个JSONP</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/柯里化">柯里化</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/实现一个Promise">实现一个Promise</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/实现instanceof">实现一个instanceof</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/14/Object.assign">模拟实现Object.assign</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/14/TypeScript">TypeScript</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/12/utils">收集开源项目好用工具函数</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/12/TaroUi">taro-ui</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/11/events">读Taro消息机制源码笔记</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/10/面试题">火爆了的前端面试题</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/泛型">泛型（TypeScript学习笔记）</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/格式化日期">格式化日期</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/枚举">枚举（TypeScript学习笔记）</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/react生命周期">React生命周期</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/parseStyle">内联样式转对象</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/05/驼峰">中横线转驼峰变量</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/liuxiaobai/blog/2019/09/05/stack">实现栈并应用</a></h1><p class="post-meta">September 5, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="" target="_blank" rel="noreferrer noopener">六小白</a></p></div></header><div><span><h3><a class="anchor" aria-hidden="true" id="栈的特性"></a><a href="#栈的特性" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>栈的特性</h3>
+<ul>
+<li>只能从栈顶操作</li>
+<li>先进的后出</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="数组实现"></a><a href="#数组实现" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>数组实现</h3>
+<pre><code class="hljs css language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Stack</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// 使用数组存储数据</span>
+    <span class="hljs-keyword">var</span> items = [];  
+
+    <span class="hljs-comment">// push方法向栈里压入一个元素</span>
+    <span class="hljs-keyword">this</span>.push = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">item</span>)</span>{
+        items.push(item);
+    };
+
+    <span class="hljs-comment">// pop方法把栈顶的元素弹出</span>
+    <span class="hljs-keyword">this</span>.pop = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword">return</span> items.pop();
+    };
+
+    <span class="hljs-comment">// top 方法返回栈顶元素</span>
+    <span class="hljs-keyword">this</span>.top = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword">return</span> items[items.length - <span class="hljs-number">1</span>];
+    };
+
+    <span class="hljs-comment">// isEmpty返回栈是否为空</span>
+    <span class="hljs-keyword">this</span>.isEmpty = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword">return</span> items.length == <span class="hljs-number">0</span>;
+    };
+
+    <span class="hljs-comment">// size方法返回栈的大小</span>
+    <span class="hljs-keyword">this</span>.size = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword">return</span> items.length;
+    };
+
+    <span class="hljs-comment">// clear 清空栈</span>
+    <span class="hljs-keyword">this</span>.clear = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        items = []
+    };
+}
+exports.Stack = Stack;
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="应用"></a><a href="#应用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>应用</h3>
+<h4><a class="anchor" aria-hidden="true" id="利用栈的进栈出栈存储数据-做业务判断"></a><a href="#利用栈的进栈出栈存储数据-做业务判断" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>利用栈的进栈出栈存储数据，做业务判断</h4>
+<p>合法括号</p>
+<p><code>dfdsf(r23)</code> 合法</p>
+<p><code>dfdsf(r23))</code> 不合法</p>
+<blockquote>
+<p>思路</p>
+</blockquote>
+<ul>
+<li>遍历</li>
+<li>若是<code>(</code>，进栈； <code>['(']</code></li>
+<li>若是<code>)</code>, 若栈中有<code>(</code>, 出栈抵消掉，栈又变成空栈<code>[]</code>； 若栈中无<code>(</code>，抵消不了；</li>
+<li>遍历完成，最理想的情况，全部成双抵消，栈为空</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="利用栈弹出的都是最新压入栈的数据-即后进先出特点"></a><a href="#利用栈弹出的都是最新压入栈的数据-即后进先出特点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>利用栈弹出的都是最新压入栈的数据，即后进先出特点</h4>
+<p>逆波兰表达式</p>
+<p><code>[&quot;10&quot;, &quot;6&quot;, &quot;9&quot;, &quot;3&quot;, &quot;+&quot;, &quot;-11&quot;, &quot;*&quot;, &quot;/&quot;, &quot;*&quot;, &quot;17&quot;, &quot;+&quot;, &quot;5&quot;, &quot;+&quot;]</code></p>
+<p>相当于</p>
+<p><code>(10 * (6 / (((9 + 3) * -11))) + 17) + 5</code></p>
+<blockquote>
+<p>思路</p>
+</blockquote>
+<ul>
+<li><p>实例出来一个栈</p></li>
+<li><p>遍历数组</p>
+<pre><code class="hljs">入栈:
+[<span class="hljs-number">10</span>]
+[<span class="hljs-number">10</span>, <span class="hljs-number">6</span>]
+[<span class="hljs-number">10</span>, <span class="hljs-number">6</span>, <span class="hljs-number">9</span>]
+[<span class="hljs-number">10</span>, <span class="hljs-number">6</span>, <span class="hljs-number">9</span>, <span class="hljs-number">3</span>]
+</code></pre></li>
+<li><p>遇到<code>+</code></p>
+<pre><code class="hljs">弹出<span class="hljs-number">3</span>
+弹出<span class="hljs-number">9</span>
+栈：[<span class="hljs-number">10</span>, <span class="hljs-number">6</span>]
+<span class="hljs-number">9</span> + <span class="hljs-number">3</span> = <span class="hljs-number">12</span>
+入栈
+栈：[<span class="hljs-number">10</span>, <span class="hljs-number">6</span>, <span class="hljs-number">12</span>]
+</code></pre></li>
+<li><p>继续</p>
+<pre><code class="hljs">[<span class="hljs-number">10</span>, <span class="hljs-number">6</span>, <span class="hljs-number">12</span>， <span class="hljs-number">-11</span>]
+</code></pre></li>
+</ul>
+<ul>
+<li><p>遇到<code>*</code></p>
+<pre><code class="hljs">弹出<span class="hljs-number">-11</span>
+弹出<span class="hljs-number">12</span>
+栈： [<span class="hljs-number">10</span>, <span class="hljs-number">6</span>]
+计算<span class="hljs-number">12</span> * <span class="hljs-number">-11</span> = <span class="hljs-number">-132</span>
+入栈
+栈：[<span class="hljs-number">10</span>,<span class="hljs-number">6</span>,<span class="hljs-number">-132</span>]
+</code></pre></li>
+<li><p>遇到<code>/</code></p>
+<pre><code class="hljs">弹出<span class="hljs-number">-132</span>
+弹出<span class="hljs-number">6</span>
+栈：[<span class="hljs-number">10</span>]
+<span class="hljs-number">6</span> / <span class="hljs-number">-132</span> = <span class="hljs-number">-0.45</span>
+进栈
+栈：[<span class="hljs-number">10</span>， <span class="hljs-number">-0.45</span>]
+</code></pre></li>
+<li><p>遇到<code>*</code></p>
+<pre><code class="hljs">弹出<span class="hljs-number">-0.45</span>
+弹出<span class="hljs-number">10</span>
+栈：[]
+<span class="hljs-number">10</span> * <span class="hljs-number">-0.45</span> = <span class="hljs-number">-4.5</span>
+进栈
+栈：[<span class="hljs-number">-4.5</span>]
+</code></pre></li>
+</ul>
+<ul>
+<li>继续
+<pre><code class="hljs">栈：[<span class="hljs-number">-4.5</span>, <span class="hljs-number">17</span>]
+</code></pre></li>
+</ul>
+<ul>
+<li><p>遇到<code>+</code></p>
+<pre><code class="hljs">弹出<span class="hljs-number">17</span>
+弹出<span class="hljs-number">-4.5</span>
+栈：[]
+<span class="hljs-number">-4.5</span> + <span class="hljs-number">17</span> = <span class="hljs-number">12.5</span>
+进栈
+栈：[<span class="hljs-number">12.5</span>]
+</code></pre></li>
+<li><p>继续</p>
+<pre><code class="hljs">栈：[<span class="hljs-number">12.5</span>, <span class="hljs-number">5</span>]
+</code></pre></li>
+<li><p>遇到<code>+</code></p>
+<pre><code class="hljs">弹出<span class="hljs-number">5</span>
+弹出<span class="hljs-number">12.5</span>
+栈：[]
+<span class="hljs-number">12.5</span> + <span class="hljs-number">5</span> = <span class="hljs-number">17.5</span>
+进栈
+栈：[<span class="hljs-number">17.5</span>]
+</code></pre></li>
+<li><p>出栈<code>17.5</code></p></li>
+</ul>
+<blockquote>
+<p>代码</p>
+</blockquote>
+<pre><code class="hljs css language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calc_exp</span>(<span class="hljs-params">exp</span>)</span>{
+    <span class="hljs-keyword">var</span> stack = <span class="hljs-keyword">new</span> Stack();
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; exp.length;i++){
+        <span class="hljs-keyword">var</span> item = exp[i];
+
+        <span class="hljs-keyword">if</span>([<span class="hljs-string">"+"</span>, <span class="hljs-string">"-"</span>, <span class="hljs-string">"*"</span>, <span class="hljs-string">"/"</span>].indexOf(item) &gt;= <span class="hljs-number">0</span>){
+            <span class="hljs-comment">// 从栈顶弹出两个元素</span>
+            <span class="hljs-keyword">var</span> value_1 = stack.pop();
+            <span class="hljs-keyword">var</span> value_2 = stack.pop();
+            <span class="hljs-comment">// 拼成表达式</span>
+            <span class="hljs-keyword">var</span> exp_str = value_2 + item + value_1;
+            <span class="hljs-comment">// 计算并取整</span>
+            <span class="hljs-keyword">var</span> res = <span class="hljs-built_in">parseInt</span>(<span class="hljs-built_in">eval</span>(exp_str));
+            <span class="hljs-comment">// 将计算结果压如栈</span>
+            stack.push(res.toString());
+        }<span class="hljs-keyword">else</span>{
+            stack.push(item);
+        }
+    }
+    <span class="hljs-comment">// 表达式如果是正确的,最终,栈里还有一个元素,且正是表达式的计算结果</span>
+    <span class="hljs-keyword">return</span> stack.pop();
+};
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="利用栈顶弹出实现最小值"></a><a href="#利用栈顶弹出实现最小值" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>利用栈顶弹出实现最小值</h4>
+<p>有一种需求，比较最大值或最小值，通过栈的方式来实现比较</p>
+<blockquote>
+<p>思路</p>
+</blockquote>
+<ul>
+<li><p>实例一个专门存最大或最小的栈A</p></li>
+<li><p>遍历一个已知数组</p></li>
+<li><p>只要保证栈A的栈顶一直是最小的值即可(每一个都跟栈顶比较)</p></li>
+<li><p>遍历完成，弹出栈A栈顶值</p></li>
+</ul>
+<blockquote>
+<p>演示</p>
+</blockquote>
+<p><code>[5, 2, 4, 8, 1, 4, 7]</code></p>
+<ul>
+<li><p><code>5:</code> <code>A[5]</code></p></li>
+<li><p><code>2:``A[5, 2]</code></p></li>
+<li><p><code>4:``A[5, 2]</code></p></li>
+<li><p><code>8:``A[5, 2]</code></p></li>
+<li><p><code>1:``A[5, 2, 1]</code></p></li>
+<li><p><code>4:``A[5, 2, 1]</code></p></li>
+<li><p><code>7:``A[5, 2, 1]</code></p></li>
+</ul>
+</span></div></div><div class="blogSocialSection"></div></div><div class="blog-recent"><a class="button" href="/liuxiaobai/blog">Recent Posts</a></div></div></div><nav class="onPageNav"></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'my-api-key',
+                indexName: 'my-index-name',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
