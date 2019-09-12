@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>实现队列并应用 · 柳小白</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="### 队列"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="实现队列并应用 · 柳小白"/><meta property="og:type" content="website"/><meta property="og:url" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/05/queue"/><meta property="og:description" content="### 队列"/><meta property="og:image" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/img/1.jpeg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/img/1.jpeg"/><link rel="shortcut icon" href="/liuxiaobai/"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css"/><link rel="alternate" type="application/atom+xml" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/atom.xml" title="柳小白 Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/feed.xml" title="柳小白 Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/liuxiaobai/js/scrollSpy.js"></script><link rel="stylesheet" href="/liuxiaobai/css/main.css"/><script src="/liuxiaobai/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/liuxiaobai/"><h2 class="headerTitle">柳小白</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/liuxiaobai/blog/" target="_self">Blog</a></li><li class=""><a href="https://github.com/stupidWall/liuxiaobai" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>All Blog Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">All Blog Posts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2020/08/21/vue">iview</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2020/08/15/对象转内联样式">对象转内联样式</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/05/stack">实现栈并应用</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/liuxiaobai/blog/2019/09/05/queue">实现队列并应用</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/27/jsonp">实现一个JSONP</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/柯里化">柯里化</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/实现一个Promise">实现一个Promise</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/实现instanceof">实现一个instanceof</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/14/Object.assign">模拟实现Object.assign</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/14/TypeScript">TypeScript</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/12/utils">收集开源项目好用工具函数</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/12/TaroUi">taro-ui</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/11/events">读Taro消息机制源码笔记</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/10/面试题">火爆了的前端面试题</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/泛型">泛型（TypeScript学习笔记）</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/格式化日期">格式化日期</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/枚举">枚举（TypeScript学习笔记）</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/react生命周期">React生命周期</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/parseStyle">内联样式转对象</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/05/驼峰">中横线转驼峰变量</a></li></ul></div></div></section></div><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>实现队列并应用 · 柳小白</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="### 队列"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="实现队列并应用 · 柳小白"/><meta property="og:type" content="website"/><meta property="og:url" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/05/queue"/><meta property="og:description" content="### 队列"/><meta property="og:image" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/img/1.jpeg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/img/1.jpeg"/><link rel="shortcut icon" href="/liuxiaobai/"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css"/><link rel="alternate" type="application/atom+xml" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/atom.xml" title="柳小白 Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/feed.xml" title="柳小白 Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/liuxiaobai/js/scrollSpy.js"></script><link rel="stylesheet" href="/liuxiaobai/css/main.css"/><script src="/liuxiaobai/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/liuxiaobai/"><h2 class="headerTitle">柳小白</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/liuxiaobai/blog/" target="_self">Blog</a></li><li class=""><a href="https://github.com/stupidWall/liuxiaobai" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>All Blog Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">All Blog Posts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2020/08/21/vue">iview</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2020/08/15/对象转内联样式">对象转内联样式</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/08/linklist">实现链表并应用</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/05/stack">实现栈并应用</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/liuxiaobai/blog/2019/09/05/queue">实现队列并应用</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/27/jsonp">实现一个JSONP</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/柯里化">柯里化</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/实现一个Promise">实现一个Promise</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/实现instanceof">实现一个instanceof</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/14/Object.assign">模拟实现Object.assign</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/14/TypeScript">TypeScript</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/12/utils">收集开源项目好用工具函数</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/12/TaroUi">taro-ui</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/11/events">读Taro消息机制源码笔记</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/10/面试题">火爆了的前端面试题</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/泛型">泛型（TypeScript学习笔记）</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/格式化日期">格式化日期</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/枚举">枚举（TypeScript学习笔记）</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/react生命周期">React生命周期</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/parseStyle">内联样式转对象</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/05/驼峰">中横线转驼峰变量</a></li></ul></div></div></section></div><script>
             var coll = document.getElementsByClassName('collapsible');
             var checkActiveCategory = true;
             for (var i = 0; i < coll.length; i++) {
@@ -78,6 +78,10 @@ Queue.prototype.size = <span class="hljs-function"><span class="hljs-keyword">fu
   <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.stores.length
 }
 
+Queue.prototype.tail = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.stores[<span class="hljs-keyword">this</span>.stores.length - <span class="hljs-number">1</span>]
+}
+
 Queue.prototype.isEmpty = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">return</span> !!<span class="hljs-keyword">this</span>.stores.length
 }
@@ -88,9 +92,9 @@ Queue.prototype.clear = <span class="hljs-function"><span class="hljs-keyword">f
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="应用"></a><a href="#应用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>应用</h3>
 <ul>
-<li><p>利用队列队首出，队尾进特性</p></li>
-<li><p>约瑟夫环</p></li>
+<li>利用队列队首出，队尾进特性</li>
 </ul>
+<h4><a class="anchor" aria-hidden="true" id="约瑟夫环"></a><a href="#约瑟夫环" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>约瑟夫环</h4>
 <p>一个数组[0-100], 每隔两个数删一个数，到末尾，再从头开始，直到最后一个，求其值</p>
 <blockquote>
 <p>思路</p>
@@ -153,6 +157,154 @@ Queue.prototype.clear = <span class="hljs-function"><span class="hljs-keyword">f
 <p>执行过程</p>
 </blockquote>
 <p><img src="https://raw.githubusercontent.com/stupidWall/liuxiaobai/master/img/blog/2019/1567655806583.png" /></p>
+<h4><a class="anchor" aria-hidden="true" id="斐波切那数列"></a><a href="#斐波切那数列" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>斐波切那数列</h4>
+<p><code>[1,1,2,3,5]</code></p>
+<p>输入n，返回对应值</p>
+<blockquote>
+<p>思路</p>
+</blockquote>
+<pre><code class="hljs">队列 [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>]
+
+当n = <span class="hljs-number">1</span> 或 <span class="hljs-number">2</span>
+出列： [<span class="hljs-number">1</span>]
+返回队首: <span class="hljs-number">1</span>
+
+
+当n = <span class="hljs-number">3</span>
+出列<span class="hljs-number">1</span>
+队首<span class="hljs-number">1</span>
+<span class="hljs-number">1</span> + <span class="hljs-number">1</span> = <span class="hljs-number">2</span>
+入列<span class="hljs-number">2</span>
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]
+最后出列<span class="hljs-number">1</span>， 返回队首<span class="hljs-number">2</span>
+
+当n = <span class="hljs-number">5</span>
+
+队列演变:
+[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>]
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]
+[<span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+[<span class="hljs-number">3</span>, <span class="hljs-number">5</span>]
+
+最后出列<span class="hljs-number">3</span>， 返回队首<span class="hljs-number">5</span>
+</code></pre>
+<blockquote>
+<p>代码</p>
+</blockquote>
+<pre><code class="hljs css language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fibonaci</span>(<span class="hljs-params">num</span>) </span>{
+  <span class="hljs-keyword">const</span> myQ = <span class="hljs-keyword">new</span> Queue()
+  myQ.enqueue(<span class="hljs-number">1</span>)
+  myQ.enqueue(<span class="hljs-number">1</span>)
+  <span class="hljs-keyword">let</span> stepIdx = <span class="hljs-number">0</span>
+  <span class="hljs-keyword">while</span> (stepIdx &lt; num - <span class="hljs-number">2</span>) {
+    <span class="hljs-keyword">let</span> deO = myQ.dequeue()
+    <span class="hljs-keyword">let</span> headO = myQ.head()
+    myQ.enqueue(deO + headO)
+    stepIdx += <span class="hljs-number">1</span>
+  }
+  myQ.dequeue()
+  <span class="hljs-keyword">return</span> myQ.head()
+}
+</code></pre>
+<pre><code class="hljs css language-javascript">fibonaci(<span class="hljs-number">8</span>)
+<span class="hljs-comment">// 21</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="使用队列实现栈"></a><a href="#使用队列实现栈" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用队列实现栈</h4>
+<ul>
+<li><p>入栈</p></li>
+<li><p>出栈</p></li>
+<li><p>访问栈顶</p></li>
+</ul>
+<p>实现上面的三个方法</p>
+<blockquote>
+<p>思路</p>
+</blockquote>
+<ul>
+<li><p>创建2个队列： A队列、B队列</p></li>
+<li><p>入栈<code>1</code>、<code>2</code>、<code>3</code></p>
+<pre><code class="hljs">入栈 <span class="hljs-number">1</span>
+队列A [<span class="hljs-number">1</span>]
+队列B []
+
+
+入栈 <span class="hljs-number">2</span>
+队列A [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]
+队列B []
+
+
+入栈 <span class="hljs-number">3</span>
+队列A [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+队列B []
+</code></pre></li>
+<li><p>出栈</p>
+<pre><code class="hljs">想办法从队列A中取<span class="hljs-number">3</span>
+
+倒入队列B
+队列A [<span class="hljs-number">3</span>]
+队列B [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]
+
+队列A剩下最后一个，使用出列获取<span class="hljs-number">3</span>
+最后是出栈成功
+队列A []
+队列B [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]
+</code></pre></li>
+<li><p>再入栈4</p>
+<pre><code class="hljs">队列A []
+队列B [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>]
+</code></pre></li>
+<li><p>访问栈顶值</p>
+<pre><code class="hljs">队列A [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>]
+队列B []
+调队列A的tail方法
+</code></pre>
+<blockquote>
+<p>代码</p>
+</blockquote></li>
+</ul>
+<pre><code class="hljs css language-javascript">  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">QStack</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">this</span>.q1 = <span class="hljs-keyword">new</span> Queue()
+    <span class="hljs-keyword">this</span>.q2 = <span class="hljs-keyword">new</span> Queue()
+    <span class="hljs-keyword">this</span>.findQ = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+      <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.q2.isEmpty() &amp;&amp; <span class="hljs-keyword">this</span>.q1.isEmpty()) {
+          <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.q2
+      }
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.q1
+    }
+  }
+
+  <span class="hljs-comment">// 入栈</span>
+  QStack.prototype.push = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">item</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'sssss'</span>, <span class="hljs-keyword">this</span>.findQ())
+    <span class="hljs-keyword">this</span>.findQ().enqueue(item)
+  }
+
+  <span class="hljs-comment">// 出栈</span>
+  QStack.prototype.pop = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">while</span> (<span class="hljs-keyword">this</span>.findQ().size() &gt; <span class="hljs-number">1</span>) {
+      <span class="hljs-keyword">this</span>.q2.enqueue(
+        <span class="hljs-keyword">this</span>.findQ().dequeue()
+      )     
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.findQ().dequeue()
+  }
+
+  <span class="hljs-comment">// 栈顶</span>
+  QStack.prototype.top = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">this</span>.findQ().tail()
+  }
+
+
+  <span class="hljs-keyword">const</span> qs = <span class="hljs-keyword">new</span> QStack()
+
+  qs.push(<span class="hljs-string">'A'</span>)
+  qs.push(<span class="hljs-string">'B'</span>)
+  qs.push(<span class="hljs-string">'C1'</span>)
+
+  <span class="hljs-built_in">console</span>.log(
+    <span class="hljs-string">'xxxxx'</span>,
+    qs.pop()
+  )
+</code></pre>
 </span></div></div><div class="blogSocialSection"></div></div><div class="blog-recent"><a class="button" href="/liuxiaobai/blog">Recent Posts</a></div></div></div><nav class="onPageNav"></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {

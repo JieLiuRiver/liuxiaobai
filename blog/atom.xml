@@ -31,6 +31,17 @@
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[实现链表并应用]]></title>
+        <id>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/08/linklist.html</id>
+        <link href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/08/linklist.html">
+        </link>
+        <updated>2019-09-08T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<h3><a class="anchor" aria-hidden="true" id="定义"></a><a href="#定义" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>定义</h3> <ul> <li><p>猴子捞月</p></li> <li><p>节点组成</p> <ul> <li>节点分为： 数据 ； 下一个的指针</li> </ul></li> <li><p>有首节点、尾节点</p></li> </ul> <blockquote> <p>分析</p> </blockquote> <pre><code class="hljs"><span class="hljs-type">A</span>( <span class="hljs-class"><span class="hljs-keyword">data</span>,</span> next =&gt; <span class="hljs-type">B</span> ) <span class="hljs-type">B</span>( <span class="hljs-class"><span class="hljs-keyword">data</span>,</span> next =&gt; <span class="hljs-type">C</span> ) <span class="hljs-type">C</span>( <span class="hljs-class"><span class="hljs-keyword">data</span>,</span> next =&gt; <span class="hljs-type">D</span> ) <span class="hljs-type">D</span>( <span class="hljs-class"><span class="hljs-keyword">data</span>,</span> next =&gt; <span class="hljs-type">E</span> ) </code></pre> <h4><a class="anchor" aria-hidden="true" id="添加元素a"></a><a href="#添加元素a" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>添加元素A</h4> <ul> <li><p>如果一个都还没有： 头节点 = 新添加的A 尾节点 = 头节点 链表长度+1</p></li> <li><p>如果已经有了 尾节点.next = A 尾节点 = A 链表长度+1</p></li> </ul> <h4><a class="anchor" aria-hidden="true" id="在b节点处插入m节点"></a><a href="#在b节点处插入m节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>在B节点处插入M节点</h4> <ul> <li><p>如果B节点是最后一个...</p></li></ul>]]></summary>
+        <author>
+            <name>六小白</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[实现栈并应用]]></title>
         <id>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/05/stack.html</id>
         <link href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/05/stack.html">
