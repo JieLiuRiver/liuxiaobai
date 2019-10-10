@@ -1,0 +1,230 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>二叉树 · 柳小白</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="### 二叉树"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="二叉树 · 柳小白"/><meta property="og:type" content="website"/><meta property="og:url" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/16/tree2"/><meta property="og:description" content="### 二叉树"/><meta property="og:image" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/img/1.jpeg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/img/1.jpeg"/><link rel="shortcut icon" href="/liuxiaobai/"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css"/><link rel="alternate" type="application/atom+xml" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/atom.xml" title="柳小白 Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/feed.xml" title="柳小白 Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/liuxiaobai/js/scrollSpy.js"></script><link rel="stylesheet" href="/liuxiaobai/css/main.css"/><script src="/liuxiaobai/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/liuxiaobai/"><h2 class="headerTitle">柳小白</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/liuxiaobai/blog/" target="_self">Blog</a></li><li class=""><a href="https://github.com/stupidWall/liuxiaobai" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>All Blog Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">All Blog Posts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2020/08/21/vue">iview</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2020/08/15/对象转内联样式">对象转内联样式</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/10/08/vuex">实现一个简单的vuex</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/30/vue-router">实现一个简单的vue-router</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/liuxiaobai/blog/2019/09/16/tree2">二叉树</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/08/linklist">实现链表并应用</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/05/stack">实现栈并应用</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/05/queue">实现队列并应用</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/27/jsonp">实现一个JSONP</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/柯里化">柯里化</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/实现一个Promise">实现一个Promise</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/实现instanceof">实现一个instanceof</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/14/Object.assign">模拟实现Object.assign</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/14/TypeScript">TypeScript</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/12/TaroUi">taro-ui</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/12/utils">收集开源项目好用工具函数</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/11/events">读Taro消息机制源码笔记</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/10/面试题">火爆了的前端面试题</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/泛型">泛型（TypeScript学习笔记）</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/格式化日期">格式化日期</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/枚举">枚举（TypeScript学习笔记）</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/react生命周期">React生命周期</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/parseStyle">内联样式转对象</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/05/驼峰">中横线转驼峰变量</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/liuxiaobai/blog/2019/09/16/tree2">二叉树</a></h1><p class="post-meta">September 16, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="" target="_blank" rel="noreferrer noopener">六小白</a></p></div></header><div><span><h3><a class="anchor" aria-hidden="true" id="二叉树"></a><a href="#二叉树" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>二叉树</h3>
+<ul>
+<li>一个根节点</li>
+<li>每个节点最多只有2个子节点，分别为左节点、右节点</li>
+</ul>
+<blockquote>
+<p>二叉搜索树</p>
+</blockquote>
+<ul>
+<li>左节点比父节点值小</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="实现类"></a><a href="#实现类" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>实现类</h3>
+<ul>
+<li>创建一个二分树类</li>
+</ul>
+<pre><code class="hljs css language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bst</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    
+  }
+}
+</code></pre>
+<ul>
+<li>创建一个节点类</li>
+</ul>
+<pre><code class="hljs css language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> </span>{
+  <span class="hljs-keyword">constructor</span>(key) {
+    <span class="hljs-keyword">this</span>.key = key
+    <span class="hljs-keyword">this</span>.left = <span class="hljs-literal">null</span>
+    <span class="hljs-keyword">this</span>.right = <span class="hljs-literal">null</span>
+    <span class="hljs-keyword">this</span>.root = <span class="hljs-literal">null</span>
+  }
+}
+</code></pre>
+<ul>
+<li><p>往<code>Bst</code>添加值为<code>8</code>的节点</p></li>
+<li><p>继续<code>Bst</code>添加值为<code>10</code>的节点</p></li>
+<li><p>继续<code>Bst</code>添加值为<code>6</code>的节点</p></li>
+<li><p>最后结果应该： <code>8(6, 10)</code></p></li>
+<li><p>实现</p></li>
+</ul>
+<pre><code class="hljs css language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bst</span> </span>{
+  ...
+  insert(key){
+    <span class="hljs-keyword">let</span> node = <span class="hljs-keyword">new</span> Node(key)
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.root) {
+      <span class="hljs-comment">// 新建一个函数，因为要递归处理</span>
+      <span class="hljs-keyword">this</span>._insertNode(<span class="hljs-keyword">this</span>.root, node)
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">this</span>.root = node
+    }
+  }
+  _insertNode(node, newNode) {
+    <span class="hljs-keyword">if</span> (newNode.key &lt; node.key) {
+      <span class="hljs-comment">// 如果值没父节点的大， 靠左</span>
+      <span class="hljs-keyword">if</span> (!node.left) {
+        <span class="hljs-comment">// 如果左节点还没</span>
+        node.left = newNode
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// 如果左节点有了， 把左节点当作新的父节点，递归判断插入</span>
+        <span class="hljs-keyword">this</span>._insertNode(node.left, newNode)
+      }
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-comment">// 如果值比父节点的大， 靠右</span>
+      <span class="hljs-keyword">if</span> (!node.right) {
+        <span class="hljs-comment">// 如果右节点还没</span>
+        node.right = newNode
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// 如果右节点有了， 把右节点当作新的父节点，递归判断插入</span>
+        <span class="hljs-keyword">this</span>._insertNode(node.right, newNode)
+      }
+    }
+  }
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="访问树大所有节点-遍历"></a><a href="#访问树大所有节点-遍历" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>访问树大所有节点 - 遍历</h4>
+<p><code>中序</code>、<code>先序</code>、<code>后序</code></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bst</span> </span>{
+  ...
+  <span class="hljs-comment">// 中序</span>
+  inSort(cb) {
+    <span class="hljs-keyword">const</span> sort = <span class="hljs-function">(<span class="hljs-params">node, cb</span>) =&gt;</span> {
+      <span class="hljs-keyword">if</span> (node) {
+        sort(node.left, cb)
+        cb(node.key)
+        sort(node.right, cb)
+      }
+    }
+    sort(<span class="hljs-keyword">this</span>.root, cb)
+  }
+  <span class="hljs-comment">// 先序</span>
+  preSort(cb) {
+    <span class="hljs-keyword">const</span> sort = <span class="hljs-function">(<span class="hljs-params">node, cb</span>) =&gt;</span> {
+      <span class="hljs-keyword">if</span> (node) {
+        cb(node.key)
+        sort(node.left, cb)
+        sort(node.right, cb)
+      }
+    }
+    sort(<span class="hljs-keyword">this</span>.root, cb)
+  }
+  <span class="hljs-comment">// 后序</span>
+  postinSort(cb) {
+    <span class="hljs-keyword">const</span> sort = <span class="hljs-function">(<span class="hljs-params">node, cb</span>) =&gt;</span> {
+      <span class="hljs-keyword">if</span> (node) {
+        sort(node.left, cb)
+        sort(node.right, cb)
+        cb(node.key)
+      }
+    }
+    sort(<span class="hljs-keyword">this</span>.root, cb)
+  }
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="二叉搜索树中的值-搜索"></a><a href="#二叉搜索树中的值-搜索" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>二叉搜索树中的值，搜索</h4>
+<blockquote>
+<p>找出最小值</p>
+</blockquote>
+<p>左侧小，一直靠左一直小， 只要还有左侧的节点，就还有更小的值</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bst</span> </span>{
+  ...
+  min() {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.root) {
+      <span class="hljs-keyword">let</span> node = <span class="hljs-keyword">this</span>.root
+      <span class="hljs-keyword">while</span> (node &amp;&amp; node.left !== <span class="hljs-literal">null</span>) {
+        node = node.left
+      }
+      <span class="hljs-keyword">return</span> node.key
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>
+    }
+  }
+}
+</code></pre>
+<blockquote>
+<p>找出最大值</p>
+</blockquote>
+<pre><code class="hljs css language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bst</span> </span>{
+  ...
+  max() {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.root) {
+      <span class="hljs-keyword">let</span> node = <span class="hljs-keyword">this</span>.root
+      <span class="hljs-keyword">while</span> (node &amp;&amp; node.right !== <span class="hljs-literal">null</span>) {
+        node = node.right
+      }
+      <span class="hljs-keyword">return</span> node.key
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>
+    }
+  }
+}
+</code></pre>
+<blockquote>
+<p>判断特定的值在二叉树中是否存在</p>
+</blockquote>
+</span></div></div><div class="blogSocialSection"></div></div><div class="blog-recent"><a class="button" href="/liuxiaobai/blog">Recent Posts</a></div></div></div><nav class="onPageNav"></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'my-api-key',
+                indexName: 'my-index-name',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

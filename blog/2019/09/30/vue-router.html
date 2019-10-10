@@ -1,0 +1,299 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>实现一个简单的vue-router · 柳小白</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="### 怎么用"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="实现一个简单的vue-router · 柳小白"/><meta property="og:type" content="website"/><meta property="og:url" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/30/vue-router"/><meta property="og:description" content="### 怎么用"/><meta property="og:image" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/img/1.jpeg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/img/1.jpeg"/><link rel="shortcut icon" href="/liuxiaobai/"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css"/><link rel="alternate" type="application/atom+xml" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/atom.xml" title="柳小白 Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/feed.xml" title="柳小白 Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/liuxiaobai/js/scrollSpy.js"></script><link rel="stylesheet" href="/liuxiaobai/css/main.css"/><script src="/liuxiaobai/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/liuxiaobai/"><h2 class="headerTitle">柳小白</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/liuxiaobai/blog/" target="_self">Blog</a></li><li class=""><a href="https://github.com/stupidWall/liuxiaobai" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>All Blog Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">All Blog Posts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2020/08/21/vue">iview</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2020/08/15/对象转内联样式">对象转内联样式</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/10/08/vuex">实现一个简单的vuex</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/liuxiaobai/blog/2019/09/30/vue-router">实现一个简单的vue-router</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/16/tree2">二叉树</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/08/linklist">实现链表并应用</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/05/stack">实现栈并应用</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/05/queue">实现队列并应用</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/27/jsonp">实现一个JSONP</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/柯里化">柯里化</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/实现一个Promise">实现一个Promise</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/实现instanceof">实现一个instanceof</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/14/Object.assign">模拟实现Object.assign</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/14/TypeScript">TypeScript</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/12/TaroUi">taro-ui</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/12/utils">收集开源项目好用工具函数</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/11/events">读Taro消息机制源码笔记</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/10/面试题">火爆了的前端面试题</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/泛型">泛型（TypeScript学习笔记）</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/格式化日期">格式化日期</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/枚举">枚举（TypeScript学习笔记）</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/react生命周期">React生命周期</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/parseStyle">内联样式转对象</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/05/驼峰">中横线转驼峰变量</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/liuxiaobai/blog/2019/09/30/vue-router">实现一个简单的vue-router</a></h1><p class="post-meta">September 30, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="" target="_blank" rel="noreferrer noopener">六小白</a></p></div></header><div><span><h3><a class="anchor" aria-hidden="true" id="怎么用"></a><a href="#怎么用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>怎么用</h3>
+<p><code>router.js</code></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> VueRouter <span class="hljs-keyword">from</span> <span class="hljs-string">'vue-router'</span>
+<span class="hljs-keyword">import</span> Home <span class="hljs-keyword">from</span> <span class="hljs-string">'./views/home'</span>
+
+
+<span class="hljs-comment">// vue-router 插件形式安装</span>
+Vue.use(VueRouter)
+
+<span class="hljs-comment">// vue-router 实例</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">new</span> VueRouter({
+    <span class="hljs-attr">routes</span>: [
+        {
+            <span class="hljs-attr">path</span>: <span class="hljs-string">'/'</span>,
+            <span class="hljs-attr">name</span>: <span class="hljs-string">'home'</span>,
+            <span class="hljs-attr">component</span>: Home
+        }
+    ]
+})
+</code></pre>
+<p><code>main.js</code></p>
+<pre><code class="hljs css language-javascript">import router from './router
+// 把vue-router实例挂载到vue实例上
+new Vue({
+  router
+  ...
+}).$mount('#app')
+</code></pre>
+<ul>
+<li><p><code>Vue.use</code>做了什么</p>
+<ul>
+<li><code>install</code>注册
+<ul>
+<li><code>$router</code>挂在到vue的每一个实例里去</li>
+<li>注册组件</li>
+</ul></li>
+</ul></li>
+<li><p>为什么要传<code>router</code>给<code>new Vue</code>实例</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="实现"></a><a href="#实现" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>实现</h3>
+<p><code>vue-router.js</code></p>
+<ul>
+<li><p>肯定有一个类<code>VueRouter</code></p></li>
+<li><p>肯定有一个<code>install</code>方法</p></li>
+</ul>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">VueRouter</span> </span>{
+    <span class="hljs-keyword">constructor</span>() {
+
+    }
+}
+
+VueRouter.install = funciton(_Vue) {
+
+}
+</code></pre>
+<ul>
+<li><code>install</code>方法传入<code>Vue</code>， 保存到模块里，方便使用</li>
+</ul>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">let</span> Vue
+VueRouter.install = funciton(_Vue) {
+    Vue = _Vue
+}
+</code></pre>
+<ul>
+<li>为了让每一个<code>vue</code>组件实例，都能通过<code>this.$router</code>访问，使用混入</li>
+</ul>
+<pre><code class="hljs css language-javascript">VueRouter.install = funciton(_Vue) {
+    Vue = _Vue
+    VUe.mixin({
+        beforeCreate() {
+            <span class="hljs-comment">// $options  https://cn.vuejs.org/v2/api/#vm-options</span>
+            <span class="hljs-comment">// 根组件执行一次</span>
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.$options.router) {
+                <span class="hljs-comment">// 这里都this 指向 Vue实例</span>
+                Vue.prototype.$router = <span class="hljs-keyword">this</span>.$options.router
+                <span class="hljs-comment">// 初始化</span>
+                <span class="hljs-keyword">this</span>.$options.router.init()
+            }
+        }
+    })
+}
+</code></pre>
+<ul>
+<li>处理传入的参数</li>
+</ul>
+<p>使用</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">new</span> VueRouter({
+    <span class="hljs-attr">routes</span>: [
+        {
+            <span class="hljs-attr">path</span>: <span class="hljs-string">'/'</span>,
+            <span class="hljs-attr">name</span>: <span class="hljs-string">'home'</span>,
+            <span class="hljs-attr">component</span>: Home
+        }
+    ]
+})
+</code></pre>
+<p>实现</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">VueRouter</span> </span>{
+    <span class="hljs-keyword">constructor</span>(options) {
+        <span class="hljs-comment">// $options下有routes</span>
+        <span class="hljs-keyword">this</span>.$options = options
+    }
+
+    init () {
+        <span class="hljs-comment">// 这里做什么</span>
+    }
+}
+</code></pre>
+<ul>
+<li><p>单页面路由实现2种方案，一个是<code>hash</code>改变，页面不更新，切换组件， 一种是<code>HTML5</code>的<code>history</code>方式</p></li>
+<li><p>这里通过<code>hash</code>方式来实现, 首先要监听<code>hashchange</code>事件</p></li>
+</ul>
+<pre><code class="hljs css language-javascript">init() {
+    <span class="hljs-comment">// 1. 事件监听</span>
+    <span class="hljs-keyword">this</span>.bindEvents();
+}
+
+bindEvents() {
+    <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'hashchange'</span>, <span class="hljs-keyword">this</span>.onHashChange.bind(<span class="hljs-keyword">this</span>))
+    <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'load'</span>, <span class="hljs-keyword">this</span>.onHashChange.bind(<span class="hljs-keyword">this</span>))
+}
+
+onHashChange() {
+ <span class="hljs-comment">// 当监听到hash改变的时候，做什么</span>
+ <span class="hljs-comment">// 想象一下。。。</span>
+}
+</code></pre>
+<ul>
+<li><code>hash</code>改变了，意味着我的路由也跟着变，当前<code>hash</code>值对应当前路由，对应当前组件，我们要建立这种关系，当前的<code>hash</code>值对应组件的映射关系，说白了，手上有<code>hash</code>值，我要拿到对应的组件配置</li>
+</ul>
+<pre><code class="hljs css language-javascript">onHashChange() {
+    <span class="hljs-comment">// #/index</span>
+    <span class="hljs-keyword">this</span>.current = <span class="hljs-built_in">window</span>.location.hash.slice(<span class="hljs-number">1</span>) || <span class="hljs-string">'/'</span>
+}
+</code></pre>
+<ul>
+<li>这里应用了vue本身data中的响应式特点, 即<code>this.app.current</code></li>
+</ul>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">this</span>.app = <span class="hljs-keyword">new</span> Vue({
+    <span class="hljs-attr">data</span>: {
+        <span class="hljs-attr">current</span>: <span class="hljs-string">'/'</span>
+    }
+})
+</code></pre>
+<ul>
+<li>路由映射，说白了，就是一个对象，<code>key:value</code>对应关系</li>
+</ul>
+<pre><code class="hljs css language-javascript">init() {
+    <span class="hljs-keyword">this</span>.createRouteMap();
+}
+
+createRouteMap(){
+    <span class="hljs-keyword">this</span>.$options.routes.forEach(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> {
+        <span class="hljs-keyword">this</span>.routeMap[item.path] = item;
+    })
+}
+</code></pre>
+<ul>
+<li><code>router-link</code>、<code>router-view</code>组件创建</li>
+</ul>
+<pre><code class="hljs css language-javascript">initComponent(){
+    <span class="hljs-comment">// router-link</span>
+    <span class="hljs-comment">// &lt;router-link to="/"&gt;abc&lt;/router-link&gt;</span>
+    Vue.component(<span class="hljs-string">'router-link'</span>, {
+        <span class="hljs-attr">props</span>: {
+            <span class="hljs-attr">to</span>: <span class="hljs-built_in">String</span>
+        },
+        render(h) {
+            <span class="hljs-comment">// h(tag, data, children)</span>
+            <span class="hljs-comment">// this是组件实例</span>
+            <span class="hljs-keyword">return</span> h(<span class="hljs-string">'a'</span>, {<span class="hljs-attr">attrs</span>: {<span class="hljs-attr">href</span>: <span class="hljs-string">'#'</span> +  <span class="hljs-keyword">this</span>.to}}, [<span class="hljs-keyword">this</span>.$slots.default])
+        }
+    })
+    <span class="hljs-comment">// router-view</span>
+    Vue.component(<span class="hljs-string">'router-view'</span>, {
+        <span class="hljs-attr">render</span>: <span class="hljs-function">(<span class="hljs-params">h</span>) =&gt;</span> {
+            <span class="hljs-comment">// 拿出要渲染的组件</span>
+            <span class="hljs-comment">// this希望是Router实例</span>
+            <span class="hljs-keyword">const</span> component = <span class="hljs-keyword">this</span>.routeMap[<span class="hljs-keyword">this</span>.app.current].component;
+            <span class="hljs-keyword">return</span> h(component)
+        }
+    })
+}
+</code></pre>
+<ul>
+<li>这里要注意一下， <code>router-view</code>是全局组件，<code>vue</code>实例的data属性, 在<code>router-view</code>组件的<code>render</code>中使用，一样，如果属性发生变化, 会重新调用<code>render</code>渲染</li>
+</ul>
+<ul>
+<li><p>单页面应用，将路径跟组件映射起来， 这就是单页面路由模块的本质</p></li>
+<li><p>整个应用只有一个完整的页面，更新视图不重新请求页面</p></li>
+<li><p><code>hash</code>是页面<code>URL</code>的锚点，代表在页面中的位置，改变<code>#</code>后面的值，浏览器回滚动到指定的位置</p></li>
+<li><p><code>history</code>模式利用<code>history.pushState</code>完成<code>URL</code>跳转不重新加载页面， 这种模式<code>url</code>后没有<code>#</code>，不那么丑。 有个问题，例如访问<code>oursite.com/user/id</code>， 上线后会返回<code>404</code>，后台要配置一下，如果<code>URL</code>匹配不到任何静态资源，应该返回同一个<code>index.html</code></p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="源码那点事"></a><a href="#源码那点事" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>源码那点事</h3>
+<ol>
+<li>如果环境已经挂载了<code>vue</code>, 就自动去使用<code>vue-router</code>。 这个逻辑的判断如下</li>
+</ol>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">if</span> (inBrowser &amp;&amp; <span class="hljs-built_in">window</span>.Vue) {
+  <span class="hljs-built_in">window</span>.Vue.use(VueRouter)
+}
+</code></pre>
+<ol start="2">
+<li>注意到源码的<code>install.js</code>文件，除了暴露<code>install</code>方法， 还暴露了<code>_Vue</code>， 这是为啥？ 这里有一个需求，就是我不想把<code>vue</code>通过<code>import Vue from 'vue'</code>打包到我的插件里，但是我又想使用，怎么办？ 在<code>install</code>方法执行后，通过传入的<code>Vue</code>，我存起来，存到我的<code>install.js</code>模块中，所以只有在调用了<code>install</code>之后才能使用暴露出去的<code>_Vue</code></li>
+</ol>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> _Vue
+</code></pre>
+<ol start="3">
+<li>怎么避免插件重复执行<code>install</code>安装，源码里是怎么写的？</li>
+</ol>
+<p>给<code>install</code>函数挂一个属性<code>installed</code>，同时仍然是同一个<code>vue</code>实例，就认为已经安装了，没必要再安装一次</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">if</span> (install.installed &amp;&amp; _Vue === Vue) <span class="hljs-keyword">return</span>
+install.installed = <span class="hljs-literal">true</span>
+
+_Vue = Vue
+</code></pre>
+<ol start="4">
+<li>有意思的是，类似这种插件的思路，我搞一个<code>vue-router</code>插件类， 你通过你的插件安装机制调用<code>install</code>方法， 调用的同时，你得把我这个插件的实例传进来给到我，我在里面拿到实例，进行调用自己的<code>init</code>方法完成初始化。 更有意思的是，我可以通过混入<code>mixin</code>, 把插件实例挂载到你<code>vue</code>组件实例里</li>
+</ol>
+<ol start="5">
+<li>路由更新时，要通知<code>router-view</code>去更新组件，源码这里使用<code>vue</code>工具方法，定义一个响应式对象，就是响应式路由对象<code>_route</code></li>
+</ol>
+<pre><code class="hljs css language-javascript"> Vue.util.defineReactive(<span class="hljs-keyword">this</span>, <span class="hljs-string">'_route'</span>, <span class="hljs-keyword">this</span>._router.history.current)
+</code></pre>
+</span></div></div><div class="blogSocialSection"></div></div><div class="blog-recent"><a class="button" href="/liuxiaobai/blog">Recent Posts</a></div></div></div><nav class="onPageNav"></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'my-api-key',
+                indexName: 'my-index-name',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

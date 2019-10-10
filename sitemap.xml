@@ -5,6 +5,9 @@
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/users</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/en/users" /> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2020/08/21/vue</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2020/08/15/对象转内联样式</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/10/08/vuex</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/30/vue-router</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/16/tree2</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/08/linklist</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/05/stack</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/05/queue</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
@@ -14,8 +17,8 @@
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/08/26/实现instanceof</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/08/14/Object.assign</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/07/14/TypeScript</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
-<url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/07/12/utils</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/07/12/TaroUi</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/07/12/utils</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/07/11/events</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/07/10/面试题</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/07/06/泛型</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
