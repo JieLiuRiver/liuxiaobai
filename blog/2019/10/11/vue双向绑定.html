@@ -1,0 +1,186 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>vue双向绑定原理 · 柳小白</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="- 首先，我要想办法把`data`里的属性观察起来，我叫一个哥们`o`， 让他帮忙我把做这件事"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="vue双向绑定原理 · 柳小白"/><meta property="og:type" content="website"/><meta property="og:url" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/10/11/vue双向绑定"/><meta property="og:description" content="- 首先，我要想办法把`data`里的属性观察起来，我叫一个哥们`o`， 让他帮忙我把做这件事"/><meta property="og:image" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/img/1.jpeg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/img/1.jpeg"/><link rel="shortcut icon" href="/liuxiaobai/"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css"/><link rel="alternate" type="application/atom+xml" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/atom.xml" title="柳小白 Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/feed.xml" title="柳小白 Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/liuxiaobai/js/scrollSpy.js"></script><link rel="stylesheet" href="/liuxiaobai/css/main.css"/><script src="/liuxiaobai/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/liuxiaobai/"><h2 class="headerTitle">柳小白</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/liuxiaobai/blog/" target="_self">Blog</a></li><li class=""><a href="https://github.com/stupidWall/liuxiaobai" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>All Blog Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">All Blog Posts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2020/08/21/vue">iview</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2020/08/15/对象转内联样式">对象转内联样式</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/liuxiaobai/blog/2019/10/11/vue双向绑定">vue双向绑定原理</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/10/08/vuex">实现一个简单的vuex</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/30/vue-router">实现一个简单的vue-router</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/16/tree2">二叉树</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/08/linklist">实现链表并应用</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/05/stack">实现栈并应用</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/05/queue">实现队列并应用</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/27/jsonp">实现一个JSONP</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/柯里化">柯里化</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/实现一个Promise">实现一个Promise</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/实现instanceof">实现一个instanceof</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/14/Object.assign">模拟实现Object.assign</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/14/TypeScript">TypeScript</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/12/utils">收集开源项目好用工具函数</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/12/TaroUi">taro-ui</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/11/events">读Taro消息机制源码笔记</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/10/面试题">火爆了的前端面试题</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/泛型">泛型（TypeScript学习笔记）</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/格式化日期">格式化日期</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/枚举">枚举（TypeScript学习笔记）</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/react生命周期">React生命周期</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/parseStyle">内联样式转对象</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/05/驼峰">中横线转驼峰变量</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/liuxiaobai/blog/2019/10/11/vue双向绑定">vue双向绑定原理</a></h1><p class="post-meta">October 11, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="" target="_blank" rel="noreferrer noopener">六小白</a></p></div></header><div><span><ul>
+<li><p>首先，我要想办法把<code>data</code>里的属性观察起来，我叫一个哥们<code>o</code>， 让他帮忙我把做这件事</p></li>
+<li><p>哥们<code>o</code>说：我有一个办法，我用<code>Object.defineProperty</code>,可以 把你<code>data</code>下的属性观察起来，现在我可以保证的是，你访问或设置<code>data</code>下的属性, 我都能观察到， 至于观察到之后做什么，你自己看着办。 重点是你得告诉我观察谁，是对象才能给你观察， 现在你只告诉我是<code>data</code>， 目前我只观察着它，其他没观察到不关我事</p></li>
+<li><pre><code class="hljs css language-js">observe(value) {
+  <span class="hljs-built_in">Object</span>.keys(value).forEach(<span class="hljs-function"><span class="hljs-params">key</span> =&gt;</span> {
+    <span class="hljs-comment">// 执行响应化</span>
+    <span class="hljs-keyword">this</span>.defineReactive(value, key, value[key])
+  })
+}
+
+defineReactive(obj, key, val) {
+  <span class="hljs-comment">// 定义属性</span>
+  <span class="hljs-comment">// 参数3是属性描述符，定义配置型、遍历性、可读、可写</span>
+  <span class="hljs-built_in">Object</span>.defineProperty(obj, key, {
+    <span class="hljs-keyword">get</span>() {
+      <span class="hljs-comment">// todo...</span>
+      <span class="hljs-keyword">return</span> val;
+    },
+    <span class="hljs-keyword">set</span>(newVal) {
+      <span class="hljs-keyword">if</span> (newVal === val) {
+        <span class="hljs-keyword">return</span>
+      }
+      <span class="hljs-comment">// todo...</span>
+      val = newVal;
+    }
+  })
+}
+</code></pre></li>
+<li><p><code>this.data[key]</code>这样访问太麻烦，我得找个人帮我，可以直接访问或设置<code>this[key]</code>,这时哥们<code>p</code>举手了</p></li>
+<li><p>哥们<code>p</code>说： 这样吧，你访问<code>this[key]</code>时，我给你转发到<code>this.data[key]</code>上去，你放心这样用吧</p></li>
+<li><pre><code class="hljs css language-js">proxyData(key) {
+  <span class="hljs-comment">// 想Vue实例上面定义属性key</span>
+  <span class="hljs-built_in">Object</span>.defineProperty(<span class="hljs-keyword">this</span>, key, {
+    <span class="hljs-keyword">get</span>() {
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.$data[key]
+    },
+    <span class="hljs-keyword">set</span>(newVal) {
+      <span class="hljs-keyword">this</span>.$data[key] = newVal;
+    }
+  })
+}
+</code></pre></li>
+<li><p><code>data</code>里的数据用在<code>template</code>模版上的， 模版上直接<code>{{attr1}}</code>就能读取，直接<code>v-model</code>就能跟<code>input</code>搭配起来用，用起来方便极了，问题是我得找人帮忙搞出来，叫哥们<code>c</code>帮我编译模版吧</p></li>
+<li><p>哥们<code>c</code>说：这活不好干，你告诉我是那个节点<code>el</code>下的<code>template</code>吧，我试试看。<code>c</code>回去后自己嘀咕着： 老大让我干啥来着？<code>{{attr1}}</code>能读取到啊， 读取？ 不行，得让老大告诉我<code>vm</code>， 不然我上哪知道，还有就是我得挑出<code>{{attr1}}</code>来， 它是一个文本节点，并且身上长有<code>{{}}</code>特征的，那没问题，找到后我就<code>vm[attr1]</code>替换掉，完美。  <code>v-model</code>这种，它是在节点属性上，如果是节点的话，我看属性<code>node.attributes</code>有没有符合要求的,  属性里挑出来<code>v-model=attr1</code>， 找到后我就<code>node.value= vm[attr1]</code> 赋进<code>input</code>元素。</p></li>
+<li><p>模版上出来值了，可是<code>input</code>输入的时候，我这里的数据要跟着变啊，这个得让哥们<code>c</code>加一个监听<code>input</code>事件，拿到值<code>value</code>后，我就直接赋值<code>vm[attr1]=value</code>,  这个时候，我哥们<code>o</code>那边能观察到被设值了</p></li>
+<li><p>问题是，我改变了<code>attr1</code>的值，页面要跟着变啊，怎么破？ 改变的时候，哥们<code>o</code>是知道的，让他通知更新？ 他咋知道给谁，这个谁就是<code>{{attr1}}</code>，这货就是订阅者，那页面不得很多订阅者啊。这个订阅者让哥们<code>w</code>搞定。  我得收集这些订阅者<code>watcher</code>,  得捋一捋，一个属性<code>attr1</code>可能会有多个订阅者<code>w</code>， 像<code>&lt;span&gt;{{attr1}}&lt;/span&gt;</code>、 <code>&lt;p&gt;{{attr1}}&lt;/p&gt;</code>都用到了对吧，那我属性一改变时，全部订阅者都得跟着更新。 这样吧， 给他们整一个收集器, 收集器让哥们<code>D</code>做，每一个属性， 都会有一个属于自己的收集器<code>D</code>，我就知道都有谁用了我的属性。 当属性改变时，我让当前这个属性的收集器去通知它下面的所有订阅者， 完美。</p></li>
+<li><p>哥们<code>D</code>收集器： 啥意思？</p></li>
+<li><p>哥们<code>w</code>订阅者： 你就直接告我让我干啥吧</p></li>
+<li><p>订阅者<code>w</code> ， 我需要你在适当的时候可以更新节点数据。 收集器<code>D</code>，你负责收集并通知</p></li>
+<li><p>哥们<code>w</code>： 啥时候要用到我？</p></li>
+<li><p>在哥们<code>c</code>编译的时候，找对相应节点赋值那里就要创建一个订阅者<code>w</code></p></li>
+<li><pre><code class="hljs css language-js">compileText: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">node, exp</span>) </span>{
+  <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
+  ...
+  new Watcher(<span class="hljs-keyword">this</span>.vm, exp, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>{
+    self.updateText(node, value);
+  });
+}
+compileModel: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">node, vm, exp, dir</span>) </span>{
+  <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
+  ...
+  new Watcher(<span class="hljs-keyword">this</span>.vm, exp, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>{
+    self.modelUpdater(node, value);
+  });
+  ...
+}
+</code></pre></li>
+<li><p>哥们<code>D</code>收集器： 那我什么时候去收集？</p></li>
+<li><p>嗯？ 但凡有一个订阅者<code>w</code>被创建， 你就要去收集它， 哥们<code>o</code>它知道哪里做收集动作</p></li>
+<li><p>哥们<code>o</code>:  不知道怎么写？怎么保证只收集一次，不会重复收集</p></li>
+<li><p>创建订阅者<code>w</code>的时候就能做手脚,  创建的时候，给收集器挂在一个当前的订阅者<code>w</code>， 然后有意去访问，触发哥们<code>o</code>里的<code>get</code>， 收集完后，关闭。</p></li>
+<li><p>哥们<code>w</code>： 明白，就这样：</p></li>
+<li><pre><code class="hljs css language-js">Dep.target = <span class="hljs-keyword">this</span>;  <span class="hljs-comment">// 缓存自己</span>
+<span class="hljs-keyword">var</span> value = <span class="hljs-keyword">this</span>.vm.data[<span class="hljs-keyword">this</span>.exp]  <span class="hljs-comment">// 强制执行监听器里的get函数</span>
+Dep.target = <span class="hljs-literal">null</span>;  <span class="hljs-comment">// 释放自己</span>
+</code></pre></li>
+<li><p>哥们<code>o</code>： 那我就这样配合你</p>
+<pre><code class="hljs css language-js">defineReactive: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data, key, val</span>) </span>{
+  <span class="hljs-comment">// 每一属性，都有一个收集器</span>
+  <span class="hljs-keyword">var</span> dep = <span class="hljs-keyword">new</span> Dep();
+  <span class="hljs-built_in">Object</span>.defineProperty(data, key, {
+    <span class="hljs-attr">enumerable</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">configurable</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getter</span> (<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">if</span> (Dep.target) {
+        <span class="hljs-comment">// 收集的动作</span>
+        dep.addSub(Dep.target);
+      }
+      <span class="hljs-keyword">return</span> val;
+    },
+    <span class="hljs-attr">set</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setter</span> (<span class="hljs-params">newVal</span>) </span>{
+      <span class="hljs-keyword">if</span> (newVal === val) {
+        <span class="hljs-keyword">return</span>;
+      }
+      val = newVal;
+      <span class="hljs-comment">// 该收集器通知所有订阅者更新</span>
+      dep.notify();
+    }
+  });
+}
+</code></pre></li>
+<li><p>再捋一捋，<code>data</code>下的属性<code>attr1</code>，一开始的时候，编译模版，然后看有多少订阅者<code>w</code>， 全给他创建，然后创建的同时，每一个订阅者<code>w</code>都会被收集到属于<code>attr1</code>的收集器中， 然后如果<code>input</code>外部输入，那我在事件里去调用<code>vm[attr1] = value</code>， 就是触发<code>set</code>,  对应的收集器就发通知，全部订阅者就更新，页面上看到全部订阅者都同步了。 然后如果直接修改<code>vm[attr1]</code>也是一样的逻辑，嗯，说得通</p></li>
+<li><p>有个问题，就是现在只是观察<code>data</code>， 如果<code>data</code>下的一个属性上一个对象，那也要被观察，这就要递归观察了</p>
+<pre><code class="hljs css language-js">defineReactive: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data, key, val</span>) </span>{
+  <span class="hljs-keyword">var</span> childObj = observe(val);
+  ...
+}
+</code></pre>
+<p><a href="https://github.com/canfoo/self-vue/blob/master/v3/js/index.js">代码</a></p></li>
+</ul>
+</span></div></div><div class="blogSocialSection"></div></div><div class="blog-recent"><a class="button" href="/liuxiaobai/blog">Recent Posts</a></div></div></div><nav class="onPageNav"></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'my-api-key',
+                indexName: 'my-index-name',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
