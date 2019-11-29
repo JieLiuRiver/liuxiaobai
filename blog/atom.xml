@@ -31,6 +31,17 @@
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[服务端渲染SSR]]></title>
+        <id>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/10/23/SSR.html</id>
+        <link href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/10/23/SSR.html">
+        </link>
+        <updated>2019-10-23T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<h4><a class="anchor" aria-hidden="true" id="资源"></a><a href="#资源" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>资源</h4> <ul> <li><a href="https://ssr.vuejs.org/zh/">vue ssr</a></li> <li><a href="https://nuxtjs.org/">nuxt.js</a></li> </ul> <h3><a class="anchor" aria-hidden="true" id="ssr"></a><a href="#ssr" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>SSR</h3> <ul> <li><p>友好SEO</p></li> <li><p>首屏快</p></li> <li><p>单页面SPA： 访问<code>url</code>， 返回<code>html</code>结构,没有<code>dom</code>结构，<code>js vue</code>，渲染<code>template</code>, 要数据，拿到<code>json</code>。 毛病是首屏慢</p></li> <li><p>传统服务端渲染： 访问<code>url</code>, 拼接<code>html</code>字符串模版，响应<code>html</code>， 渲染<code>html</code>， 毛病是每次请求都刷新，流量消耗大</p></li> <li><p>SSR解决上面2问题： 后段渲染出完成首屏<code>dom</code>结构返回，前端拿到的包括首屏结构和完整<code>spa</code>结构， 应用激活后，依然按照<code>spa</code>方式运行</p></li> <li><p>缺点：开发复杂度增加，开发条件...</p></li></ul>]]></summary>
+        <author>
+            <name>六小白</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[vue双向绑定原理]]></title>
         <id>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/10/11/vue双向绑定.html</id>
         <link href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/10/11/vue双向绑定.html">
@@ -114,6 +125,17 @@
         </link>
         <updated>2019-08-27T06:00:00Z</updated>
         <summary type="html"><![CDATA[<h3><a class="anchor" aria-hidden="true" id="代码如下"></a><a href="#代码如下" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>代码如下</h3> <pre><code class="hljs css language-javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">window,document</span>) </span>{ <span class="hljs-meta"> "use strict"</span>; <span class="hljs-keyword">var</span> jsonp = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">url,data,callback</span>) </span>{ <span class="hljs-comment">// 1.将传入的data数据转化为url字符串形式</span> <span class="hljs-comment">// {id:1,name:'jack'} =&gt; id=1&amp;name=jack</span> <span class="hljs-keyword">var</span> dataString = url.indexof(<span class="hljs-string">'?'</span>) == <span class="hljs-number">-1</span>? <span class="hljs-string">'?'</span>: <span class="hljs-string">'&amp;'</span>; <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> data){ dataSt...</code></pre>]]></summary>
+        <author>
+            <name>六小白</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[vue源码]]></title>
+        <id>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/10/13.vue源码.html</id>
+        <link href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/10/13.vue源码.html">
+        </link>
+        <updated>1970-01-01T00:00:00Z</updated>
+        <summary type="html"><![CDATA[<ul> <li><p><code>dist</code>目录</p> <ul> <li><code>..common.xx.js</code> cjs，符合<code>require.js</code>、<code>node</code>打包方式</li> <li><code>...esm.xx.js</code>符合新的, <code>webpack2+</code>打包方式</li> <li><code>vue.js</code>: <code>umd</code>版本， 浏览器使用</li> <li><code>runtime</code> 仅包含运行时</li> </ul></li> <li><p><code>flow</code>类型写的</p></li> <li><p><code>src</code>目录重点</p></li> <li><p>测试环境搭建</p> <pre><code class="hljs css language-js">npm i -g rollup </code></pre> <ul> <li><p>修改<code>package.json</code>内容, 加上<code>--sourcemap</code>参数</p></li> <li><pre><code class="hljs css language-js">"dev": "rollup -w -c scripts/config.js --sourcemap --en...</code></pre></li></ul></li></ul>]]></summary>
         <author>
             <name>六小白</name>
         </author>

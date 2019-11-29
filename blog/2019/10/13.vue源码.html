@@ -1,0 +1,647 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>vue源码 · 柳小白</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="- `dist`目录"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="vue源码 · 柳小白"/><meta property="og:type" content="website"/><meta property="og:url" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/10/13.vue源码"/><meta property="og:description" content="- `dist`目录"/><meta property="og:image" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/img/1.jpeg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/img/1.jpeg"/><link rel="shortcut icon" href="/liuxiaobai/"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css"/><link rel="alternate" type="application/atom+xml" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/atom.xml" title="柳小白 Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/feed.xml" title="柳小白 Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/liuxiaobai/js/scrollSpy.js"></script><link rel="stylesheet" href="/liuxiaobai/css/main.css"/><script src="/liuxiaobai/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/liuxiaobai/"><h2 class="headerTitle">柳小白</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/liuxiaobai/blog/" target="_self">Blog</a></li><li class=""><a href="https://github.com/stupidWall/liuxiaobai" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>All Blog Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">All Blog Posts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2020/08/21/vue">iview</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2020/08/15/对象转内联样式">对象转内联样式</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/10/23/SSR">服务端渲染SSR</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/10/11/vue双向绑定">vue双向绑定原理</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/10/08/vuex">实现一个简单的vuex</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/30/vue-router">实现一个简单的vue-router</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/16/tree2">二叉树</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/08/linklist">实现链表并应用</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/05/stack">实现栈并应用</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/05/queue">实现队列并应用</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/27/jsonp">实现一个JSONP</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/liuxiaobai/blog/2019/10/13.vue源码">vue源码</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/柯里化">柯里化</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/实现一个Promise">实现一个Promise</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/实现instanceof">实现一个instanceof</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/14/Object.assign">模拟实现Object.assign</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/14/TypeScript">TypeScript</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/12/utils">收集开源项目好用工具函数</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/12/TaroUi">taro-ui</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/11/events">读Taro消息机制源码笔记</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/10/面试题">火爆了的前端面试题</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/泛型">泛型（TypeScript学习笔记）</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/格式化日期">格式化日期</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/枚举">枚举（TypeScript学习笔记）</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/react生命周期">React生命周期</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/parseStyle">内联样式转对象</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/05/驼峰">中横线转驼峰变量</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/liuxiaobai/blog/2019/10/13.vue源码">vue源码</a></h1><p class="post-meta">October 13, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="" target="_blank" rel="noreferrer noopener">六小白</a></p></div></header><div><span><ul>
+<li><p><code>dist</code>目录</p>
+<ul>
+<li><code>..common.xx.js</code> cjs，符合<code>require.js</code>、<code>node</code>打包方式</li>
+<li><code>...esm.xx.js</code>符合新的, <code>webpack2+</code>打包方式</li>
+<li><code>vue.js</code>: <code>umd</code>版本， 浏览器使用</li>
+<li><code>runtime</code> 仅包含运行时</li>
+</ul></li>
+<li><p><code>flow</code>类型写的</p></li>
+<li><p><code>src</code>目录重点</p></li>
+<li><p>测试环境搭建</p>
+<pre><code class="hljs css language-js">npm i -g rollup
+</code></pre>
+<ul>
+<li><p>修改<code>package.json</code>内容,  加上<code>--sourcemap</code>参数</p></li>
+<li><pre><code class="hljs css language-js">"dev": "rollup -w -c scripts/config.js --sourcemap --environment TARGET:web-
+full-dev"
+</code></pre></li>
+<li><pre><code class="hljs css language-js">yarn dev
+</code></pre></li>
+<li><p>执行后，创建了新的<code>vue.js</code>， 在<code>../../dist/vue.js</code></p></li>
+<li><p>新建<code>index.html</code>，引入<code>/dist/vue.js</code>调试代码</p></li>
+</ul></li>
+<li><p>找打包入口文件<code>scripts/config.js</code></p>
+<ul>
+<li><p>搜索<code>web-full-dev</code>找到</p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-string">'web-full-dev'</span>: {
+  <span class="hljs-attr">entry</span>: resolve(<span class="hljs-string">'web/entry-runtime-with-compiler.js'</span>)
+}
+</code></pre></li>
+<li><p><code>web/xxxx</code>路径怎么找的</p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> aliases = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./alias'</span>)
+<span class="hljs-keyword">const</span> resolve = <span class="hljs-function"><span class="hljs-params">p</span> =&gt;</span> {
+  <span class="hljs-keyword">const</span> base = p.split(<span class="hljs-string">'/'</span>)[<span class="hljs-number">0</span>]
+  <span class="hljs-keyword">if</span> (aliases[base]) {
+    <span class="hljs-keyword">return</span> path.resolve(aliases[base], p.slice(base.length + <span class="hljs-number">1</span>))
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> path.resolve(__dirname, <span class="hljs-string">'../'</span>, p)
+  }
+}
+</code></pre>
+<p><code>alias.js</code></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>)
+
+<span class="hljs-keyword">const</span> resolve = <span class="hljs-function"><span class="hljs-params">p</span> =&gt;</span> path.resolve(__dirname, <span class="hljs-string">'../'</span>, p)
+
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">web</span>: resolve(<span class="hljs-string">'src/platforms/web'</span>),
+}
+</code></pre>
+<p>找到<code>src/platforms/entry-runtime-with-compiler.js</code></p></li>
+</ul></li>
+</ul>
+<ul>
+<li><p><code>src/platforms/entry-runtime-with-compiler.js</code></p>
+<ul>
+<li><p>扩展了<code>$mount</code>方法</p></li>
+<li><p>处理<code>$el</code>、<code>options</code>选项</p></li>
+<li><p>如果<code>new Vue()</code> 没有使用<code>render</code>， 才认你写的<code>template</code>， 即<code>render</code>优先级高</p>
+<ul>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">if</span> (!options.render) {
+    <span class="hljs-keyword">let</span> template = options.template
+    ...
+</code></pre></li>
+</ul></li>
+<li><p>如果不写<code>render</code>方式，配置<code>options.template</code>情况比<code>html</code>元素上挂在<code>$el</code>，优先级高</p>
+<ul>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">let</span> template = options.template
+<span class="hljs-keyword">if</span> (template) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> template === <span class="hljs-string">'string'</span>) {
+      ...
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (template.nodeType) {
+      template = template.innerHTML
+    }
+    ...
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (el) {
+  template = getOuterHTML(el)
+}
+</code></pre></li>
+</ul></li>
+<li><p>无论什么写法，最终通过<code>template</code>编译成<code>render</code>函数</p></li>
+</ul></li>
+<li><p>找<code>vue</code>构造函数</p>
+<ul>
+<li><p><code>entry-runtime-with-compiler.js</code></p>
+<ul>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">'./runtime/index'</span>
+
+</code></pre></li>
+</ul></li>
+<li><p><code>./runtime/index.js</code></p>
+<ul>
+<li><code>Vue</code>来自<code>import Vue from 'core/index'</code></li>
+<li>定义<code>$mount</code>方法<code>Vue.prototype.$mount = function</code></li>
+<li>定义了打补丁的方法<code>Vue.prototype.__patch__ = inBrowser ? patch : noop</code></li>
+</ul></li>
+<li><p><code>core/index.js</code></p>
+<ul>
+<li><code>Vue</code>来自<code>import Vue from './instance/index'</code></li>
+<li>定义全局Api: <code>initGlobalAPI(Vue)</code></li>
+</ul></li>
+<li><p><code>./instance/index.js</code></p>
+<ul>
+<li>找到构造函数<code>function Vue (options) {}</code></li>
+<li><code>initMixin(Vue)</code></li>
+</ul></li>
+</ul></li>
+<li><p>怎么初始化?</p>
+<ul>
+<li><p><code>vue/src/code/instance/init.js</code></p>
+<ul>
+<li><pre><code class="hljs css language-js">initLifecycle(vm)
+initEvents(vm)
+initRender(vm)
+callHook(vm, <span class="hljs-string">'beforeCreate'</span>)
+initInjections(vm) <span class="hljs-comment">// resolve injections before data/props</span>
+initState(vm)
+initProvide(vm) <span class="hljs-comment">// resolve provide after data/props</span>
+callHook(vm, <span class="hljs-string">'created'</span>)
+...
+<span class="hljs-comment">// 没调$mount,有el, 自动调</span>
+<span class="hljs-keyword">if</span> (vm.$options.el) {
+  vm.$mount(vm.$options.el)
+}
+
+</code></pre></li>
+<li><p><code>initLifecycle(vm)</code></p>
+<ul>
+<li><code>parent.$children.push(vm)</code>  组件实例放进父组件</li>
+<li>声明初始化变量</li>
+</ul></li>
+<li><p><code>initEvents(vm)</code>处理父组件传递的监听器</p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> listeners = vm.$options._parentListeners
+  <span class="hljs-keyword">if</span> (listeners) {
+    updateComponentListeners(vm, listeners)
+  }
+
+</code></pre></li>
+<li><p><code>initRender(vm)</code></p>
+<ul>
+<li><code>vm.$createElement</code>函数, 即<code>render</code>的<code>h</code>函数</li>
+<li><code>$slots</code>、<code>$scopedSlots</code></li>
+</ul></li>
+<li><p><code>initInjections(vm)</code> 注入数据</p></li>
+<li><p><code>initState</code></p>
+<ul>
+<li>初始化组件中的<code>props</code>、<code>methods</code>、<code>data</code>、<code>computed</code>、<code>watch</code></li>
+</ul></li>
+<li><p><code>initProvide</code> 提供数据</p></li>
+</ul></li>
+</ul></li>
+<li><p>响应化处理代码</p>
+<ul>
+<li><p><code>vue/src/code/instance/state.js</code></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">if</span> (opts.data) {
+    initData(vm)
+}
+
+</code></pre></li>
+<li><p><code>initData(vm)</code></p>
+<ul>
+<li>观察<code>data</code></li>
+<li><code>observe(data, true)</code></li>
+</ul></li>
+<li><p><code>observe(data, true)</code></p>
+<ul>
+<li>返回一个<code>观察者</code></li>
+<li><code>return new Observer(value)</code></li>
+</ul></li>
+<li><p>`Observer</p>
+<ul>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">constructor</span> (value: any) {
+  <span class="hljs-keyword">this</span>.value = value
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Array</span>.isArray(value)) {
+    <span class="hljs-keyword">if</span> (hasProto) {
+      protoAugment(value, arrayMethods)
+    } <span class="hljs-keyword">else</span> {
+      copyAugment(value, arrayMethods, arrayKeys)
+    }
+    <span class="hljs-keyword">this</span>.observeArray(value)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">this</span>.walk(value)
+  }
+}
+
+</code></pre></li>
+<li><p>数组</p>
+<ul>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">if</span> (hasProto) {
+  protoAugment(value, arrayMethods)
+} <span class="hljs-keyword">else</span> {
+  copyAugment(value, arrayMethods, arrayKeys)
+}
+
+</code></pre></li>
+</ul></li>
+<li><p>普通对象处理<code>walk(value)</code></p>
+<ul>
+<li><pre><code class="hljs css language-js">walk (obj: <span class="hljs-built_in">Object</span>) {
+  <span class="hljs-keyword">const</span> keys = <span class="hljs-built_in">Object</span>.keys(obj)
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; keys.length; i++) {
+      defineReactive(obj, keys[i])
+  }
+}
+
+</code></pre></li>
+<li><p><code>defineReactive()</code></p>
+<ul>
+<li><p>有一个收集器<code>dep</code></p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> dep = <span class="hljs-keyword">new</span> Dep()
+
+</code></pre></li>
+<li><p>递归观察</p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">let</span> childOb = !shallow &amp;&amp; observe(val)
+
+</code></pre></li>
+<li><p>定义拦截</p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-built_in">Object</span>.defineProperty(obj, key, {
+    <span class="hljs-attr">enumerable</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">configurable</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reactiveGetter</span> (<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">const</span> value = getter ? getter.call(obj) : val
+      <span class="hljs-comment">// 依赖收集</span>
+      <span class="hljs-keyword">if</span> (Dep.target) {
+        <span class="hljs-comment">// 追加</span>
+        dep.depend()
+        <span class="hljs-comment">// 如果有子obj存在</span>
+        <span class="hljs-keyword">if</span> (childOb) {
+          <span class="hljs-comment">// 追加依赖</span>
+          childOb.dep.depend()
+          <span class="hljs-comment">// 如果是数组， 额外处理</span>
+          <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Array</span>.isArray(value)) {
+            dependArray(value)
+          }
+        }
+      }
+      <span class="hljs-keyword">return</span> value
+    },
+}
+
+</code></pre>
+<ul>
+<li><p><code>set</code></p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-comment">// 如果使用了setter</span>
+<span class="hljs-keyword">if</span> (setter) {
+  setter.call(obj, newVal)
+} <span class="hljs-keyword">else</span> {
+  val = newVal
+}
+<span class="hljs-comment">// 设置完的数组/对象，重新响应化</span>
+childOb = !shallow &amp;&amp; observe(newVal)
+<span class="hljs-comment">// 通知更新</span>
+dep.notify()
+ 
+
+</code></pre></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p>梳理数组响应化处理</p>
+<ul>
+<li><p><code>protoAugment(value, arrayMethods)</code></p></li>
+<li><p><code>vue/src/code/observer/array.js</code></p>
+<ul>
+<li>下面7个方法会修改数组</li>
+</ul></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> methodsToPatch = [
+  <span class="hljs-string">'push'</span>,
+  <span class="hljs-string">'pop'</span>,
+  <span class="hljs-string">'shift'</span>,
+  <span class="hljs-string">'unshift'</span>,
+  <span class="hljs-string">'splice'</span>,
+  <span class="hljs-string">'sort'</span>,
+  <span class="hljs-string">'reverse'</span>
+]
+
+</code></pre></li>
+<li><p>拦截，添加其他行为</p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> original = arrayProto[method]
+def(arrayMethods, method, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mutator</span> (<span class="hljs-params">...args</span>) </span>{
+      <span class="hljs-comment">// 保持原来的能力</span>
+    <span class="hljs-keyword">const</span> result = original.apply(<span class="hljs-keyword">this</span>, args)
+    <span class="hljs-comment">// 通知更新</span>
+    <span class="hljs-keyword">const</span> ob = <span class="hljs-keyword">this</span>.__ob__
+    <span class="hljs-comment">// 下面3个方法需要额外做响应化处理</span>
+    <span class="hljs-keyword">let</span> inserted
+    <span class="hljs-keyword">switch</span> (method) {
+      <span class="hljs-keyword">case</span> <span class="hljs-string">'push'</span>:
+      <span class="hljs-keyword">case</span> <span class="hljs-string">'unshift'</span>:
+        inserted = args
+        <span class="hljs-keyword">break</span>
+      <span class="hljs-keyword">case</span> <span class="hljs-string">'splice'</span>:
+        inserted = args.slice(<span class="hljs-number">2</span>)
+        <span class="hljs-keyword">break</span>
+    }
+    <span class="hljs-keyword">if</span> (inserted) ob.observeArray(inserted)
+    <span class="hljs-comment">// notify change</span>
+      <span class="hljs-comment">// 更新</span>
+    ob.dep.notify()
+    <span class="hljs-keyword">return</span> result
+  })
+
+</code></pre></li>
+<li><p>一个数组，<code>['foo', 'bar']</code>,  会赋值一个<code>__obj__</code>一个<code>Observer</code>， 拦截处拿到<code>Observer</code>, 如果外部使用<code>push</code>操作了数组，<code>['foo', 'bar', 'dam']</code>, 其中<code>dam</code>， 我也要观察起来<code>ob.observeArray(inserted)</code>， 对于数组而言，已经发生变化了，我要通知更新<code>ob.dep.notify()</code></p></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p>初始化过程</p>
+<ul>
+<li><code>init -&gt; $mount -&gt; compile -&gt; new Watcher -&gt; render -&gt; update</code></li>
+</ul></li>
+<li><p>异步更新队列</p>
+<ul>
+<li><p>我们知道<code>dep.notify()</code>执行之后，所有<code>watcher</code>执行更新，很多的话，这是一个入队的操作</p></li>
+<li><p>每一个<code>watcher</code>有个<code>update</code>函数</p></li>
+<li><pre><code class="hljs css language-js">update () {
+  <span class="hljs-comment">/* istanbul ignore else */</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.lazy) {
+    <span class="hljs-keyword">this</span>.dirty = <span class="hljs-literal">true</span>
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.sync) {
+    <span class="hljs-keyword">this</span>.run()
+  } <span class="hljs-keyword">else</span> {
+    queueWatcher(<span class="hljs-keyword">this</span>)
+  }
+}
+
+</code></pre></li>
+<li><p><code>queueWatcher(this)</code>入队</p>
+<ul>
+<li>去重处理</li>
+<li>入队<code>queue.push(watcher)</code></li>
+<li>启动异步任务<code>nextTick(flushSchedulerQueue)</code></li>
+</ul></li>
+<li><p><code>nextTick</code></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">nextTick</span> (<span class="hljs-params">cb?: Function, ctx?: Object</span>) </span>{
+  <span class="hljs-keyword">let</span> _resolve
+  callbacks.push(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">if</span> (cb) {
+      <span class="hljs-keyword">try</span> {
+        cb.call(ctx)
+      } <span class="hljs-keyword">catch</span> (e) {
+        handleError(e, ctx, <span class="hljs-string">'nextTick'</span>)
+      }
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (_resolve) {
+      _resolve(ctx)
+    }
+  })
+  <span class="hljs-keyword">if</span> (!pending) {
+    pending = <span class="hljs-literal">true</span>
+    <span class="hljs-comment">// 异步函数</span>
+    timerFunc()
+  }
+  <span class="hljs-comment">// $flow-disable-line</span>
+  <span class="hljs-keyword">if</span> (!cb &amp;&amp; <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">Promise</span> !== <span class="hljs-string">'undefined'</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> {
+      _resolve = resolve
+    })
+  }
+}
+
+</code></pre>
+<ul>
+<li><p><code>watcher.run()</code></p></li>
+<li><p>微任务首选<code>Promise</code> 、 <code>mutationobserver</code></p></li>
+<li><p>次选<code>setImmediate</code></p></li>
+<li><p>最后<code>setTimeout</code></p></li>
+<li><p>微任务里做完所有工作，才刷新页面，这是我想要的</p></li>
+<li><p>宏任务的话，我这些更新都会触发页面一次次的更新，就不好了</p></li>
+<li><pre><code class="hljs css language-js">setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> { 
+  <span class="hljs-keyword">this</span>.foo = <span class="hljs-built_in">Math</span>.random()
+  <span class="hljs-keyword">this</span>.foo = <span class="hljs-built_in">Math</span>.random()
+  <span class="hljs-keyword">this</span>.foo = <span class="hljs-built_in">Math</span>.random()
+  <span class="hljs-comment">// 上面改了三次，最后只会更新一次</span>
+  <span class="hljs-built_in">console</span>.log(p1.innerHTML)
+  <span class="hljs-keyword">this</span>.$nextTick(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(p1.innerHTML)
+  })
+}, <span class="hljs-number">1000</span>);
+
+</code></pre></li>
+</ul></li>
+</ul></li>
+<li><p>虚拟DOM</p>
+<ul>
+<li><p>跨平台： <code>diff</code>算法找出差异后，根据不同平台，做不同的渲染</p></li>
+<li><p>提高性能： DOM操作最小化</p></li>
+<li><p><code>vue1.0</code>数据变化观察的<code>watcher</code>太细，开销大量，没虚拟DOM</p></li>
+<li><p><code>vue2.0</code>每一个组件一个<code>watcher</code>实例，状态变化时，通知组件，通过虚拟DOM进行比较对比渲染</p></li>
+<li><pre><code class="hljs css language-js"> updateComponent = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  vm._update(vm._render(), hydrating)
+ }
+ <span class="hljs-keyword">new</span> Watcher(vm, updateComponent, noop, {
+   before () {
+     <span class="hljs-keyword">if</span> (vm._isMounted &amp;&amp; !vm._isDestroyed) {
+       callHook(vm, <span class="hljs-string">'beforeUpdate'</span>)
+     }
+   }
+ }, <span class="hljs-literal">true</span> <span class="hljs-comment">/* isRenderWatcher */</span>)
+
+</code></pre></li>
+<li><p>获得虚拟DOM<code>vm._render()</code></p>
+<ul>
+<li><p><code>code/instanc/render.js</code></p></li>
+<li><pre><code class="hljs css language-js">vnode = render.call(vm._renderProxy, vm.$createElement)
+
+</code></pre></li>
+<li><p><code>vm.$createElement</code>就是<code>h</code>函数</p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-comment">// # 柯里化，省参数问题</span>
+vm.$createElement = <span class="hljs-function">(<span class="hljs-params">a, b, c, d</span>) =&gt;</span> createElement(vm, a, b, c, d, <span class="hljs-literal">true</span>)
+
+</code></pre></li>
+<li><p>找到<code>createElement</code>函数, <code>code/vdom/create-element.js</code></p></li>
+<li><p>把传入的组件，转化为虚拟DOM， 根据标签执行不同的操作</p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">let</span> vnode, ns
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> tag === <span class="hljs-string">'string'</span>) {
+  ...
+
+</code></pre>
+<ul>
+<li><p>判断是不是原生的标签<code>div</code>...</p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">if</span> (config.isReservedTag(tag)) {
+
+</code></pre></li>
+<li><p>是的话直接创建</p></li>
+<li><pre><code class="hljs css language-js">vnode = <span class="hljs-keyword">new</span> VNode(
+  config.parsePlatformTagName(tag), data, children,
+  <span class="hljs-literal">undefined</span>, <span class="hljs-literal">undefined</span>, context
+)
+
+</code></pre></li>
+<li><p>如果是自定义组件</p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ((!data || !data.pre) &amp;&amp; isDef(Ctor = resolveAsset(context.$options, <span class="hljs-string">'components'</span>, tag))) {
+  <span class="hljs-comment">// component</span>
+  <span class="hljs-comment">// 根据组件构造函数创建</span>
+  vnode = createComponent(Ctor, data, context, children, tag)
+}
+
+</code></pre></li>
+<li><p>返回虚拟DOM</p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">if</span> (<span class="hljs-built_in">Array</span>.isArray(vnode)) {
+  <span class="hljs-keyword">return</span> vnode
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (isDef(vnode)) {
+  <span class="hljs-keyword">if</span> (isDef(ns)) applyNS(vnode, ns)
+  <span class="hljs-keyword">if</span> (isDef(data)) registerDeepBindings(data)
+  <span class="hljs-keyword">return</span> vnode
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">return</span> createEmptyVNode()
+}
+
+</code></pre></li>
+<li></li>
+</ul></li>
+</ul></li>
+<li><p>虚拟DOM转为真是DOM<code>vm._update()</code></p>
+<ul>
+<li><p>找到定义地方<code>lifecycle.js</code></p></li>
+<li><pre><code class="hljs css language-js">Vue.prototype._update = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">vnode: VNode, hydrating?: boolean</span>) </span>{
+    
+}
+
+</code></pre></li>
+<li><p>一开始没有上一次的虚拟DOM, 后面会有旧的虚拟DOM进行对比</p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">if</span> (!prevVnode) {
+    <span class="hljs-comment">// initial render</span>
+    vm.$el = vm.__patch__(vm.$el, vnode, hydrating, <span class="hljs-literal">false</span> <span class="hljs-comment">/* removeOnly */</span>)
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// updates</span>
+    vm.$el = vm.__patch__(prevVnode, vnode)
+}
+
+</code></pre></li>
+<li><p><code>__patch__</code>定义地方<code>platforms/web/runtime/index.js</code></p></li>
+<li><pre><code class="hljs css language-js">Vue.prototype.__patch__ = inBrowser ? patch : noop
+
+</code></pre></li>
+<li><p><code>patch</code>在<code>platforms\web\runtime\node-ops.js</code></p></li>
+<li><p>通过同层的树节点进行比较**而非对树进行逐层搜索遍历的方式，所以时间复杂度只有O(n)，是一种相当高效的算法</p></li>
+<li><p>同层级只做三件事:增删改。具体规则是:new VNode不存在就删;old VNode不存在就增;都存在就 比较类型，类型不同直接替换、类型相同执行更新</p></li>
+<li><p>两个VNode类型相同，就执行更新操作，包括三种类型操作:属性更新PROPS、文本更新TEXT、子节点更新****REORDER**patchVnode具体规则如下:</p>
+<ol>
+<li><p>如果新旧VNode都是<strong>静态的</strong>，那么只需要替换elm以及componentInstance即可。</p></li>
+<li><p>新老节点<strong>均有****children</strong>子节点，则对子节点进行diff操作，调用<strong>updateChildren</strong></p></li>
+<li><p>如果<strong>老节点没有子节点而新节点存在子节点</strong>，先清空老节点DOM的文本内容，然后为当前DOM节</p>
+<p>点加入子节点。</p></li>
+<li><p>当<strong>新节点没有子节点而老节点有子节点</strong>的时候，则移除该DOM节点的所有子节点。</p></li>
+<li><p>当<strong>新老节点都无子节点</strong>的时候，只是文本的替换</p></li>
+</ol></li>
+</ul></li>
+</ul></li>
+<li><p><code>Vue</code>组件化机制</p>
+<ul>
+<li><p>组件声明、注册</p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-comment">//    全局组件</span>
+Vue.component(<span class="hljs-string">'comp'</span>, {
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;div&gt;comp&lt;/div&gt;'</span>
+})
+<span class="hljs-comment">// 1. 声明com组件构造函数VueComponent</span>
+<span class="hljs-comment">// 2. 全局配置选项中加入comonents: {comp: Comp}</span>
+</code></pre></li>
+<li><p><code>initAssetRegisters(Vue)</code>、<code>src/core/global-api/assets.js</code></p></li>
+<li><p>全局API调了一个方法<code>initAssetRegisters</code>, 传了个构造函数<code>Vue</code>参数</p></li>
+<li><p>它要生成组件构造函数，是<code>VueComponent</code>类， 通过<code>vue.extend()</code>继承过来，继承<code>vue</code>父类，扩展出来的<code>VueComponent</code></p></li>
+<li><p>它要去注册组件，注册到<code>vue</code>构造函数<code>options</code>里，意味着，所有<code>VueComponent</code>因为继承它，所有<code>options</code>选项合并，所有<code>components</code>都会有，即全局声明组件，全局都可以用的原因</p></li>
+<li><p>那自定义组件呢？</p>
+<ul>
+<li>根组件先创建，会先执行根组件的render方法，得到树VNode虚拟节点，其中有一个子节点是自定义组件</li>
+<li>实例化子组件，即调用createElement，获取到子组件的构造函数，并创建
+<pre><code class="hljs">  Ctor = resolve<span class="hljs-constructor">Asset(<span class="hljs-params">context</span>.$<span class="hljs-params">options</span>,'<span class="hljs-params">components</span>',<span class="hljs-params">tag</span>)</span>
+  <span class="hljs-comment">// 返回 vnode, 并添加了初始化勾子 installComponentHooks()</span>
+  vnode = create<span class="hljs-constructor">Component(Ctor)</span>
+</code></pre></li>
+</ul></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initAssetRegisters</span> (<span class="hljs-params">Vue: GlobalAPI</span>) </span>{
+  <span class="hljs-comment">// 'component', 'directive', 'filter'</span>
+  ASSET_TYPES.forEach(<span class="hljs-function"><span class="hljs-params">type</span> =&gt;</span> {
+    <span class="hljs-comment">// Vue['component']</span>
+    Vue[type] = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">
+      id: string,
+        definition: Function | Object
+      </span>): <span class="hljs-title">Function</span> | <span class="hljs-title">Object</span> | <span class="hljs-title">void</span> </span>{
+        <span class="hljs-comment">// 组件注册</span>
+        <span class="hljs-keyword">if</span> (type === <span class="hljs-string">'component'</span> &amp;&amp; isPlainObject(definition)) {
+        definition.name = definition.name || id
+        <span class="hljs-comment">// 使用extend方法，将传入组件配置转换为构造函数VueComponent definition = this.options._base.extend(definition)</span>
+        }
+                <span class="hljs-comment">// Vue.options['components']['comp'] = VueComponent</span>
+          <span class="hljs-keyword">this</span>.options[type + <span class="hljs-string">'s'</span>][id] = definition
+          <span class="hljs-keyword">return</span> definition
+        }
+  }) 
+}
+</code></pre>
+<ul>
+<li><p>生成构造函数：<code>VueComponent Vue.extend(opts)</code></p></li>
+<li><p>注册组件： <code>Vue.options.components</code></p></li>
+</ul></li>
+<li><p>组件实例化以及挂载</p>
+<ul>
+<li><code>new Vue</code>根组件创建</li>
+<li><code>_render() =&gt; VNode</code></li>
+<li><code>_createElement()</code>获取子组件构造函数并创建</li>
+</ul></li>
+<li></li>
+</ul></li>
+<li><p>模版编译</p>
+<ul>
+<li><p><strong>将模板****(template)****转换为渲染函数****(render)</strong></p></li>
+<li><p>三个阶段:解析、优化和生成</p>
+<ul>
+<li><p>解析器将模板解析为抽象语法树AST，只有将模板解析成AST后，才能基于它做优化或者生成代码字符串, j解析DOM结构以及其中表达式、指令等</p></li>
+<li><p>优化器的作用是在AST中找出静态子树并打上标记。静态子树是在AST中永远不变的节点，如纯文本节点。 将AST转换为渲染函数等代码字符串</p>
+<ul>
+<li><p>标记静态子树的好处:</p>
+<ul>
+<li><p>每次重新渲染，不需要为静态子树创建新节点</p></li>
+<li><p>虚拟DOM中patch时，可以跳过静态子树</p></li>
+</ul></li>
+</ul></li>
+<li><p>生成generate： 将AST转换成渲染函数中的内容，即代码字符串。</p></li>
+</ul></li>
+<li><p>编译器获取整体流程</p></li>
+<li><p>高阶函数</p></li>
+</ul></li>
+</ul>
+<ul>
+<li>事件处理机制
+<ul>
+<li>普通事件： <code>platforms\web\runtime\modules\events.js</code></li>
+<li>自定义事件： <code>initEvents core/instance/events.js</code></li>
+</ul></li>
+</ul>
+</span></div></div><div class="blogSocialSection"></div></div><div class="blog-recent"><a class="button" href="/liuxiaobai/blog">Recent Posts</a></div></div></div><nav class="onPageNav"></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'my-api-key',
+                indexName: 'my-index-name',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

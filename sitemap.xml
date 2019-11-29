@@ -5,6 +5,7 @@
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/users</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/en/users" /> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2020/08/21/vue</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2020/08/15/对象转内联样式</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/10/23/SSR</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/10/11/vue双向绑定</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/10/08/vuex</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/30/vue-router</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
@@ -13,6 +14,7 @@
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/05/stack</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/09/05/queue</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/08/27/jsonp</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/10/13.vue源码</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/08/26/柯里化</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/08/26/实现一个Promise</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/08/26/实现instanceof</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>

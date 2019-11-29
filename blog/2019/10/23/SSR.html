@@ -1,0 +1,559 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>服务端渲染SSR · 柳小白</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="#### 资源"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="服务端渲染SSR · 柳小白"/><meta property="og:type" content="website"/><meta property="og:url" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/2019/10/23/SSR"/><meta property="og:description" content="#### 资源"/><meta property="og:image" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/img/1.jpeg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://github.com/stupidWall/liuxiaobai/liuxiaobai/img/1.jpeg"/><link rel="shortcut icon" href="/liuxiaobai/"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night.min.css"/><link rel="alternate" type="application/atom+xml" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/atom.xml" title="柳小白 Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://github.com/stupidWall/liuxiaobai/liuxiaobai/blog/feed.xml" title="柳小白 Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/liuxiaobai/js/scrollSpy.js"></script><link rel="stylesheet" href="/liuxiaobai/css/main.css"/><script src="/liuxiaobai/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/liuxiaobai/"><h2 class="headerTitle">柳小白</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/liuxiaobai/blog/" target="_self">Blog</a></li><li class=""><a href="https://github.com/stupidWall/liuxiaobai" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>All Blog Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">All Blog Posts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2020/08/21/vue">iview</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2020/08/15/对象转内联样式">对象转内联样式</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/liuxiaobai/blog/2019/10/23/SSR">服务端渲染SSR</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/10/11/vue双向绑定">vue双向绑定原理</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/10/08/vuex">实现一个简单的vuex</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/30/vue-router">实现一个简单的vue-router</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/16/tree2">二叉树</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/08/linklist">实现链表并应用</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/05/stack">实现栈并应用</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/09/05/queue">实现队列并应用</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/27/jsonp">实现一个JSONP</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/10/13.vue源码">vue源码</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/柯里化">柯里化</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/实现一个Promise">实现一个Promise</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/26/实现instanceof">实现一个instanceof</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/08/14/Object.assign">模拟实现Object.assign</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/14/TypeScript">TypeScript</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/12/utils">收集开源项目好用工具函数</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/12/TaroUi">taro-ui</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/11/events">读Taro消息机制源码笔记</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/10/面试题">火爆了的前端面试题</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/泛型">泛型（TypeScript学习笔记）</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/格式化日期">格式化日期</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/枚举">枚举（TypeScript学习笔记）</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/react生命周期">React生命周期</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/06/parseStyle">内联样式转对象</a></li><li class="navListItem"><a class="navItem" href="/liuxiaobai/blog/2019/07/05/驼峰">中横线转驼峰变量</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/liuxiaobai/blog/2019/10/23/SSR">服务端渲染SSR</a></h1><p class="post-meta">October 23, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="" target="_blank" rel="noreferrer noopener">六小白</a></p></div></header><div><span><h4><a class="anchor" aria-hidden="true" id="资源"></a><a href="#资源" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>资源</h4>
+<ul>
+<li><a href="https://ssr.vuejs.org/zh/">vue ssr</a></li>
+<li><a href="https://nuxtjs.org/">nuxt.js</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="ssr"></a><a href="#ssr" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SSR</h3>
+<ul>
+<li><p>友好SEO</p></li>
+<li><p>首屏快</p></li>
+<li><p>单页面SPA： 访问<code>url</code>， 返回<code>html</code>结构,没有<code>dom</code>结构，<code>js vue</code>，渲染<code>template</code>,  要数据，拿到<code>json</code>。 毛病是首屏慢</p></li>
+<li><p>传统服务端渲染： 访问<code>url</code>, 拼接<code>html</code>字符串模版，响应<code>html</code>， 渲染<code>html</code>， 毛病是每次请求都刷新，流量消耗大</p></li>
+<li><p>SSR解决上面2问题： 后段渲染出完成首屏<code>dom</code>结构返回，前端拿到的包括首屏结构和完整<code>spa</code>结构， 应用激活后，依然按照<code>spa</code>方式运行</p></li>
+<li><p>缺点：开发复杂度增加，开发条件复杂，其他库不处理可能不能运行，部署起来麻烦， 基于<code>node</code>， 起到中间件作用</p></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="实战"></a><a href="#实战" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>实战</h4>
+<ul>
+<li><p>新建工程<code>vue create ssr</code></p></li>
+<li><p>安装依赖<code>npm install vue-server-renderer express -D</code></p></li>
+<li><p>启动脚本</p>
+<ul>
+<li><p>创建<code>expresss</code>服务器</p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>)
+<span class="hljs-keyword">const</span> Vue = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vue'</span>)
+
+<span class="hljs-keyword">const</span> app = express();
+<span class="hljs-keyword">const</span> page = <span class="hljs-keyword">new</span> Vue({
+    <span class="hljs-attr">data</span>: {<span class="hljs-attr">name</span>:<span class="hljs-string">'标题'</span>},
+    <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;div&gt;{{name}}&lt;/div&gt;'</span>
+})
+
+<span class="hljs-comment">// 1.渲染器</span>
+<span class="hljs-keyword">const</span> renderer = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vue-server-renderer'</span>).createRenderer();
+
+app.get(<span class="hljs-string">'/'</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>)</span>{
+    <span class="hljs-comment">// 2.执行渲染</span>
+    <span class="hljs-keyword">const</span> html = <span class="hljs-keyword">await</span> renderer.renderToString(page)
+    res.send(html);
+})
+
+app.listen(<span class="hljs-number">3000</span>, () =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'渲染服务器就绪'</span>);
+})
+</code></pre></li>
+</ul></li>
+<li><p>路由： 路由支持仍然使用vue-router</p>
+<ul>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">"vue"</span>;
+<span class="hljs-keyword">import</span> Router <span class="hljs-keyword">from</span> <span class="hljs-string">"vue-router"</span>;
+<span class="hljs-comment">// 分别创建Index.vue和Detail.vue</span>
+<span class="hljs-keyword">import</span> Index <span class="hljs-keyword">from</span> <span class="hljs-string">"@/views/Index"</span>;
+<span class="hljs-keyword">import</span> Detail <span class="hljs-keyword">from</span> <span class="hljs-string">"@/views/Detail"</span>;
+
+Vue.use(Router);
+
+<span class="hljs-comment">//导出工厂函数</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createRouter</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Router({
+    <span class="hljs-attr">mode</span>: <span class="hljs-string">'history'</span>,
+    <span class="hljs-attr">routes</span>: [
+      { <span class="hljs-attr">path</span>: <span class="hljs-string">"/"</span>, <span class="hljs-attr">component</span>: Index },
+      { <span class="hljs-attr">path</span>: <span class="hljs-string">"/detail"</span>, <span class="hljs-attr">component</span>: Detail }
+    ]
+  });
+}
+</code></pre></li>
+</ul></li>
+<li><p>构建</p>
+<ul>
+<li><p>对于客户端应用程序和服务器应用程序，我们都要使用 webpack 打包 - 服务器需要「服务器 bundle」 然后用于服务器端渲染(SSR)，而「客户端 bundle」会发送给浏览器，用于混合静态标记</p></li>
+<li><p>构建流程</p>
+<ul>
+<li></li>
+</ul></li>
+<li><pre><code class="hljs">src
+├── App.vue
+├── app.<span class="hljs-keyword">js </span><span class="hljs-comment"># 用于创建vue实例</span>
+├── entry-client.<span class="hljs-keyword">js </span><span class="hljs-comment"># 客户端入口，用于静态内容“激活”</span>
+└── entry-server.<span class="hljs-keyword">js </span><span class="hljs-comment"># 服务端入口，用于首屏内容渲染</span>
+</code></pre></li>
+<li><p><code>app.js</code></p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-comment">// 创建Vue实例</span>
+<span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
+<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">'./App.vue'</span>
+<span class="hljs-keyword">import</span> {createRouter} <span class="hljs-keyword">from</span> <span class="hljs-string">'./router'</span>
+<span class="hljs-keyword">import</span> { createStore } <span class="hljs-keyword">from</span> <span class="hljs-string">'./store'</span>
+
+<span class="hljs-comment">// 客户端挂载之前，检查组件是否存在异步数据获取</span>
+Vue.mixin({
+    beforeMount() {
+      <span class="hljs-keyword">const</span> { asyncData } = <span class="hljs-keyword">this</span>.$options;
+      <span class="hljs-keyword">if</span> (asyncData) {
+        <span class="hljs-comment">// 将获取数据操作分配给 promise</span>
+        <span class="hljs-comment">// 以便在组件中，我们可以在数据准备就绪后</span>
+        <span class="hljs-comment">// 通过运行 `this.dataPromise.then(...)` 来执行其他任务</span>
+        <span class="hljs-keyword">this</span>.dataPromise = asyncData({
+          <span class="hljs-attr">store</span>: <span class="hljs-keyword">this</span>.$store,
+          <span class="hljs-attr">route</span>: <span class="hljs-keyword">this</span>.$route,
+        });
+      }
+    },
+  });
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createApp</span>(<span class="hljs-params">context</span>) </span>{
+    <span class="hljs-comment">// 1.获取路由实例</span>
+    <span class="hljs-keyword">const</span> router = createRouter();
+    <span class="hljs-comment">// 2.获取store实例</span>
+    <span class="hljs-keyword">const</span> store = createStore()
+    <span class="hljs-comment">// 2.创建vue实例</span>
+    <span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Vue({
+        router,
+        store,
+        context,
+        <span class="hljs-attr">render</span>: <span class="hljs-function"><span class="hljs-params">h</span> =&gt;</span> h(App)
+    })
+    <span class="hljs-keyword">return</span> {app, router, store}
+}
+</code></pre></li>
+<li><p><code>src/entry-server.js</code> 服务端入口, 首屏</p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-comment">// 创建vue实例并且做首屏渲染</span>
+<span class="hljs-keyword">import</span> {createApp} <span class="hljs-keyword">from</span> <span class="hljs-string">'./app'</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> context =&gt; {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+        <span class="hljs-keyword">const</span> {app,router,store} = createApp(context)
+        <span class="hljs-comment">// 跳转首屏</span>
+        router.push(context.url)
+        router.onReady(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            <span class="hljs-comment">// 获取匹配的路由组件数组</span>
+            <span class="hljs-keyword">const</span> matchedComponents = router.getMatchedComponents();
+            <span class="hljs-keyword">if</span> (!matchedComponents.length) {
+              <span class="hljs-keyword">return</span> reject({ <span class="hljs-attr">code</span>: <span class="hljs-number">404</span> });
+            }
+            
+            <span class="hljs-comment">// 对所有匹配的路由组件调用 `asyncData()`</span>
+            <span class="hljs-built_in">Promise</span>.all(
+              matchedComponents.map(<span class="hljs-function"><span class="hljs-params">Component</span> =&gt;</span> {
+                <span class="hljs-keyword">if</span> (Component.asyncData) {
+                  <span class="hljs-keyword">return</span> Component.asyncData({
+                    store,
+                    <span class="hljs-attr">route</span>: router.currentRoute,
+                  });
+                }
+              }),
+            )
+              .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                <span class="hljs-comment">// 所有预取钩子 resolve 后，</span>
+                <span class="hljs-comment">// store 已经填充入渲染应用所需状态</span>
+                <span class="hljs-comment">// 将状态附加到上下文，且 `template` 选项用于 renderer 时，</span>
+                <span class="hljs-comment">// 状态将自动序列化为 `window.__INITIAL_STATE__`，并注入 HTML。</span>
+                context.state = store.state;
+                  
+                resolve(app);
+              })
+              .catch(reject);
+          }, reject);
+    })
+}
+</code></pre></li>
+<li><p><code>entry-client.js</code>客户端入口， 激活</p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// 客户端激活</span>
+<span class="hljs-keyword">import</span> { createApp } <span class="hljs-keyword">from</span> <span class="hljs-string">"./app"</span>;
+
+<span class="hljs-keyword">const</span> { app, router, store } = createApp();
+
+<span class="hljs-comment">// 当使用 template 时，context.state 将作为 window.__INITIAL_STATE__ 状态自动嵌入到最终的 HTML // 在客户端挂载到应用程序之前，store 就应该获取到状态：</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.__INITIAL_STATE__) {
+  store.replaceState(<span class="hljs-built_in">window</span>.__INITIAL_STATE__);
+}
+
+router.onReady(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-comment">// 激活</span>
+  app.$mount(<span class="hljs-string">"#app"</span>);
+});
+
+</code></pre></li>
+</ul></li>
+<li><p><code>webpack</code>配置</p>
+<ul>
+<li><p><code>vue.config.js</code></p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> VueSSRServerPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">"vue-server-renderer/server-plugin"</span>);
+<span class="hljs-keyword">const</span> VueSSRClientPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">"vue-server-renderer/client-plugin"</span>);
+
+<span class="hljs-keyword">const</span> TARGET_NODE = process.env.WEBPACK_TARGET === <span class="hljs-string">"node"</span>;
+<span class="hljs-keyword">const</span> target = TARGET_NODE ? <span class="hljs-string">"server"</span> : <span class="hljs-string">"client"</span>;
+
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">css</span>: {
+    <span class="hljs-attr">extract</span>: <span class="hljs-literal">false</span>
+  },
+  <span class="hljs-attr">outputDir</span>: <span class="hljs-string">'./dist/'</span>+target,
+  <span class="hljs-attr">configureWebpack</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> ({
+    <span class="hljs-comment">// 将 entry 指向应用程序的 server / client 文件</span>
+    entry: <span class="hljs-string">`./src/entry-<span class="hljs-subst">${target}</span>.js`</span>,
+    <span class="hljs-comment">// 对 bundle renderer 提供 source map 支持</span>
+    devtool: <span class="hljs-string">'source-map'</span>,
+    <span class="hljs-comment">// 这允许 webpack 以 Node 适用方式处理动态导入(dynamic import)，</span>
+    <span class="hljs-comment">// 并且还会在编译 Vue 组件时告知 `vue-loader` 输送面向服务器代码(server-oriented code)。</span>
+    target: TARGET_NODE ? <span class="hljs-string">"node"</span> : <span class="hljs-string">"web"</span>,
+    <span class="hljs-attr">node</span>: TARGET_NODE ? <span class="hljs-literal">undefined</span> : <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">output</span>: {
+      <span class="hljs-comment">// 此处使用 Node 风格导出模块</span>
+      libraryTarget: TARGET_NODE ? <span class="hljs-string">"commonjs2"</span> : <span class="hljs-literal">undefined</span>
+    },
+    <span class="hljs-comment">// 这是将服务器的整个输出构建为单个 JSON 文件的插件。</span>
+    <span class="hljs-comment">// 服务端默认文件名为 `vue-ssr-server-bundle.json`</span>
+    plugins: [TARGET_NODE ? <span class="hljs-keyword">new</span> VueSSRServerPlugin() : <span class="hljs-keyword">new</span> VueSSRClientPlugin()]
+  })
+};
+</code></pre></li>
+<li><p>脚本 <code>package.json</code></p></li>
+<li><pre><code class="hljs"><span class="hljs-string">"scripts"</span>: {
+    <span class="hljs-string">"build:client"</span>: <span class="hljs-string">"vue-cli-service build"</span>,
+    <span class="hljs-string">"build:server"</span>: <span class="hljs-string">"cross-env WEBPACK_TARGET=node vue-cli-service build --mode server"</span>,
+    <span class="hljs-string">"build"</span>: <span class="hljs-string">"npm run build:server &amp;&amp; npm run build:client"</span>,
+  },
+</code></pre></li>
+</ul></li>
+<li><p>宿主文件</p>
+<ul>
+<li><p>最后需要定义宿主文件，创建./public/index.tmpl.html</p></li>
+<li><pre><code class="hljs css language-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width,initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--vue-ssr-outlet--&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre></li>
+</ul></li>
+<li><p>服务器启动文件<code>server/index2.js</code></p>
+<ul>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>)
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>)
+
+<span class="hljs-keyword">const</span> app = express();
+
+<span class="hljs-comment">// 1.渲染器</span>
+<span class="hljs-keyword">const</span> {createBundleRenderer} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vue-server-renderer'</span>);
+<span class="hljs-keyword">const</span> bundle = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../dist/server/vue-ssr-server-bundle.json'</span>)
+
+app.use(express.static(<span class="hljs-string">'../dist/client'</span>, {<span class="hljs-attr">index</span>: <span class="hljs-literal">false</span>}))
+
+<span class="hljs-comment">// bundle是服务端包</span>
+<span class="hljs-keyword">const</span> renderer = createBundleRenderer(bundle, {
+    <span class="hljs-attr">runInNewContext</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">template</span>: fs.readFileSync(<span class="hljs-string">'../public/index.tmpl.html'</span>, <span class="hljs-string">"utf-8"</span>),
+    <span class="hljs-attr">clientManifest</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">'../dist/client/vue-ssr-client-manifest.json'</span>)
+})
+
+app.get(<span class="hljs-string">'*'</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(req.url);
+    
+    <span class="hljs-keyword">const</span> context = {
+        <span class="hljs-attr">title</span>: <span class="hljs-string">'SSR Test'</span>,
+        <span class="hljs-attr">url</span>: req.url
+    }
+
+    <span class="hljs-comment">// 2.执行渲染</span>
+    <span class="hljs-keyword">const</span> html = <span class="hljs-keyword">await</span> renderer.renderToString(context)
+    res.send(html);
+})
+
+app.listen(<span class="hljs-number">3000</span>, () =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'渲染服务器就绪'</span>);
+    
+})
+</code></pre></li>
+<li></li>
+</ul></li>
+<li><p>整合<code>Vuex</code></p>
+<ul>
+<li><p><code>store.js</code></p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">"vue"</span>;
+<span class="hljs-keyword">import</span> Vuex <span class="hljs-keyword">from</span> <span class="hljs-string">"vuex"</span>;
+
+Vue.use(Vuex);
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createStore</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Vuex.Store({
+    <span class="hljs-attr">state</span>: {
+      <span class="hljs-attr">count</span>: <span class="hljs-number">0</span>,
+    },
+    <span class="hljs-attr">mutations</span>: {
+      add(state) {
+        state.count += <span class="hljs-number">1</span>;
+      },
+      init(state, count) {
+        state.count = count;
+      },
+    },
+    <span class="hljs-attr">actions</span>: {
+      <span class="hljs-comment">// 加一个异步请求count的action</span>
+      getCount({ commit }) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> {
+          setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            commit(<span class="hljs-string">"init"</span>, <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">100</span>);
+            resolve();
+          }, <span class="hljs-number">1000</span>);
+        });
+      },
+    },
+  });
+}
+</code></pre></li>
+<li><p>挂载 <code>app.js</code></p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { createStore } <span class="hljs-keyword">from</span> <span class="hljs-string">'./store'</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createApp</span> (<span class="hljs-params">context</span>) </span>{ <span class="hljs-comment">// 创建实例</span>
+    <span class="hljs-keyword">const</span> store = createStore()
+    <span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Vue({
+                store, <span class="hljs-comment">// 挂载</span>
+        render: <span class="hljs-function"><span class="hljs-params">h</span> =&gt;</span> h(App)
+    })
+    <span class="hljs-keyword">return</span> { app, router, store }
+}
+</code></pre></li>
+<li><p>使用<code>src/components/Index.vue</code></p></li>
+<li><pre><code class="hljs css language-js">&lt;h2&gt;num:{{$store.state.count}}&lt;/h2&gt;
+&lt;button @click="$store.commit('add')"&gt;add&lt;/button&gt;
+</code></pre></li>
+</ul></li>
+</ul>
+<ul>
+<li><p><code>Next.js</code></p>
+<ul>
+<li><p>基于<code>vue.js</code>的通用应用框架</p></li>
+<li><p>安装：<code>npx create-nuxt-app 项目名</code></p></li>
+<li><p>运行：<code>npm run dev</code></p></li>
+<li><p>路由</p>
+<ul>
+<li>pages目录中所有 *.vue 文件自动生成应用的路由配置，新建:
+<ul>
+<li>pages/admin.vue 商品管理页</li>
+<li>pages/login.vue 登录页</li>
+</ul></li>
+<li>查看.nuxt/router.js验证生成路由</li>
+</ul></li>
+<li><p><strong>动态路由</strong></p>
+<ul>
+<li><p><strong>下划线作为前缀</strong>的 .vue文件 或 目录会被定义为动态路由，如下面文件结构。 如果detail/里面不存在index.vue，:id将被作为可选参数</p>
+<ul>
+<li><pre><code class="hljs">pages/
+-<span class="ruby">-<span class="hljs-params">| detail/
+</span></span>-<span class="ruby"><span class="hljs-params">---|</span> _id.vue
+</span></code></pre></li>
+</ul></li>
+</ul></li>
+<li><p><strong>嵌套路由</strong></p>
+<ul>
+<li><p>创建内嵌子路由，你需要添加一个 .vue 文件，同时添加一个<strong>与该文件同名</strong>的目录用来存放子视图组 件。</p>
+<ul>
+<li><pre><code class="hljs">pages/
+-<span class="ruby">-<span class="hljs-params">| detail/
+</span></span>-<span class="ruby"><span class="hljs-params">---|</span> _id.vue
+</span>-<span class="ruby">-<span class="hljs-params">| detail.vue
+</span></span></code></pre></li>
+</ul></li>
+</ul></li>
+<li><p>扩展路由</p>
+<ul>
+<li><p>要扩展 Nuxt.js 创建的路由，可以通过 router.extendRoutes 选项配置。例如添加自定义路由:</p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-comment">// nuxt.config.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">router</span>: {
+      extendRoutes (routes, resolve) {
+        routes.push({
+          <span class="hljs-attr">name</span>: <span class="hljs-string">"foo"</span>,
+          <span class="hljs-attr">path</span>: <span class="hljs-string">"/foo"</span>,
+          <span class="hljs-attr">component</span>: resolve(__dirname, <span class="hljs-string">"pages/custom.vue"</span>)
+          }); 
+      }
+  } 
+}
+</code></pre></li>
+</ul></li>
+<li><p><strong>整合****axios</strong></p>
+<ul>
+<li><p>安装@nuxt/axios模块: npm install @nuxtjs/axios -S</p></li>
+<li><p>配置:nuxt.config.js</p></li>
+<li><pre><code class="hljs css language-js">modules: [
+    <span class="hljs-string">'@nuxtjs/axios'</span>,
+], <span class="hljs-attr">axios</span>: {
+    <span class="hljs-attr">proxy</span>: <span class="hljs-literal">true</span>
+},
+<span class="hljs-attr">proxy</span>: {
+    <span class="hljs-string">"/api"</span>: <span class="hljs-string">"http://localhost:8080"</span>
+},
+</code></pre></li>
+</ul></li>
+<li><p><strong>异步数据获取</strong></p>
+<ul>
+<li>asyncData 方法使得我们可以在<strong>设置组件数据之前异步获取或处理数据</strong>。</li>
+</ul></li>
+<li><p><strong>中间件</strong></p>
+<ul>
+<li><p>中间件会在一个页面或一组页面渲染之前运行我们定义的函数，常用于权限控制、校验等任务。</p></li>
+<li><p>管理员页面保护，创建middleware/auth.js</p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">{ route, redirect, store }</span>) </span>{ 
+  <span class="hljs-comment">// 上下文中通过store访问vuex中的全局状态</span>
+<span class="hljs-comment">// 通过vuex中令牌存在与否判断是否登录</span>
+<span class="hljs-keyword">if</span> (!store.state.user.token) {
+    redirect(<span class="hljs-string">"/login?redirect="</span>+route.path);
+  }
+}
+</code></pre></li>
+<li><p>注册中间件，admin.vue</p></li>
+<li><pre><code class="hljs css language-js">&lt;script&gt;
+    export default {
+        middleware: ['auth']
+}
+&lt;/script&gt;
+</code></pre></li>
+<li><p>全局注册:将会对所有页面起作用，nuxt.config.js</p></li>
+<li><pre><code class="hljs css language-js">router: {
+    <span class="hljs-attr">middleware</span>: [<span class="hljs-string">'auth'</span>]
+},
+</code></pre></li>
+</ul></li>
+<li><p><strong>发布部署</strong></p></li>
+<li><p><strong>静态应用部署</strong></p>
+<ul>
+<li><p>Nuxt.js 可依据路由配置将应用静态化，使得我们可以将应用部署至任何一个静态站点主机服务商。</p></li>
+<li><pre><code class="hljs css language-js">npm run generate
+</code></pre></li>
+<li><p>注意渲染和接口服务器都需要处于启动状态, 生成内容再dist中</p></li>
+</ul></li>
+<li><p>插件</p>
+<ul>
+<li><p>Nuxt.js会在运行应用之前执行插件函数，需要引入或设置Vue插件、自定义模块和第三方模块时特别有用</p></li>
+<li><p>接口注入，利用插件机制将服务接口注入组件实例、store实例中，创建plugins/api- inject.js</p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> ({ $axios }, inject) =&gt; {
+  inject(<span class="hljs-string">"login"</span>, user =&gt; {
+    <span class="hljs-keyword">return</span> $axios.$post(<span class="hljs-string">"/api/login"</span>, user);
+  });
+};
+</code></pre></li>
+<li><p>注册插件，nuxt.config.js</p></li>
+<li><pre><code class="hljs css language-js">plugins: [
+    <span class="hljs-string">"@/plugins/api-inject"</span>
+],
+</code></pre></li>
+<li><p>添加请求拦截器附加token，创建plugins/interceptor.js</p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">{ $axios, store }</span>) </span>{
+  $axios.onRequest(<span class="hljs-function"><span class="hljs-params">config</span> =&gt;</span> {
+    <span class="hljs-keyword">if</span> (store.state.user.token) {
+      config.headers.Authorization = <span class="hljs-string">"Bearer "</span> + store.state.user.token;
+}
+    <span class="hljs-keyword">return</span> config;
+  });
+}
+</code></pre></li>
+<li><p>注册插件，nuxt.config.js</p></li>
+<li><pre><code class="hljs css language-js">plugins: [<span class="hljs-string">"@/plugins/interceptor"</span>]
+</code></pre></li>
+<li><p><strong>nuxtServerInit</strong></p>
+<ul>
+<li><p>当我们想将服务端的一些数据传到客户端时，这个方法非常好用。</p></li>
+<li><p>登录状态初始化，store/index.js</p></li>
+<li><pre><code class="hljs css language-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> actions = {
+<span class="hljs-comment">// 参数1:action上下文对象，参数2:页面上下文 nuxtServerInit({ commit }, { app }) {</span>
+    <span class="hljs-keyword">const</span> token = app.$cookies.get(<span class="hljs-string">"token"</span>);
+    <span class="hljs-keyword">if</span> (token) {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"nuxtServerInit: token:"</span>+token);
+      commit(<span class="hljs-string">"user/init"</span>, token);
+    }
+} };
+</code></pre></li>
+<li><p>安装依赖模块:cookie-universal-nuxt <code>npm i -S cookie-universal-nuxt</code></p></li>
+<li><p>注册, nuxt.config.js</p></li>
+<li><pre><code class="hljs"><span class="hljs-symbol">modules:</span> [<span class="hljs-string">"cookie-universal-nuxt"</span>],
+</code></pre></li>
+<li><pre><code class="hljs">nuxtServerInit只能写在store/index<span class="hljs-selector-class">.js</span> 
+nuxtServerInit仅在服务端执行
+</code></pre></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</span></div></div><div class="blogSocialSection"></div></div><div class="blog-recent"><a class="button" href="/liuxiaobai/blog">Recent Posts</a></div></div></div><nav class="onPageNav"></nav></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'my-api-key',
+                indexName: 'my-index-name',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
